@@ -4,11 +4,11 @@ import { useEffect, useRef, useState } from "react";
 export const Route = createFileRoute("/status")({
   head: () => ({
     meta: [
-      { title: "Status — Pax Med" },
-      { name: "description", content: "Página de status do site de vendas Pax Med." },
+      { title: "Status — PAXMED" },
+      { name: "description", content: "Página de status do site de vendas PAXMED." },
       { name: "robots", content: "noindex" },
-      { property: "og:title", content: "Status — Pax Med" },
-      { property: "og:description", content: "Verificação de disponibilidade do site Pax Med." },
+      { property: "og:title", content: "Status — PAXMED" },
+      { property: "og:description", content: "Verificação de disponibilidade do site PAXMED." },
     ],
   }),
   component: StatusPage,
@@ -89,7 +89,7 @@ function StatusPage() {
       });
     }
 
-    // api-server Pax Med — endpoint público /api/brt (heartbeat do backend).
+    // api-server PAXMED — endpoint público /api/brt (heartbeat do backend).
     const apiBase =
       (import.meta.env.VITE_API_BASE_URL as string | undefined)?.replace(/\/+$/, "") ||
       (import.meta.env.VITE_API_URL as string | undefined)?.replace(/\/+$/, "") ||

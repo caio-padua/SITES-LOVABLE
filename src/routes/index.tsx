@@ -81,10 +81,10 @@ function Nav() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-[rgba(5,5,5,0.62)] border-b border-[rgba(242,184,23,0.12)]">
       <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-10 h-14 sm:h-16 grid grid-cols-[minmax(0,1fr)_auto] xl:flex items-center justify-between gap-3 sm:gap-6">
-        <a href="#top" aria-label="PAX MED — ir para o topo" className={"flex items-center gap-3 min-w-0 " + link}>
+        <a href="#top" aria-label="PAXMED — ir para o topo" className={"flex items-center gap-3 min-w-0 " + link}>
           <PaxMedMonogram size={34} />
           <span className="flex flex-col justify-center min-w-0 leading-none">
-            <span className="font-serif text-[18px] sm:text-[24px] font-semibold tracking-[0.14em] sm:tracking-[0.22em] parxis-gold-text whitespace-nowrap leading-tight">PAX MED</span>
+            <span className="font-serif text-[18px] sm:text-[24px] font-semibold tracking-[0.14em] sm:tracking-[0.22em] parxis-gold-text whitespace-nowrap leading-tight">PAXMED</span>
             <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.28em] text-[color:var(--gold)] opacity-80 whitespace-nowrap mt-0.5">
               {tr(c.tagline, lang)}
             </span>
@@ -384,7 +384,7 @@ function ParxisMonogram() {
   }, []);
 
   return (
-    <div ref={stageRef} className="parxis-stage relative flex items-center justify-center min-h-[560px] lg:min-h-[640px]" aria-label="Pax Med">
+    <div ref={stageRef} className="parxis-stage relative flex items-center justify-center min-h-[560px] lg:min-h-[640px]" aria-label="PAXMED">
       <div className="parxis-halo-conic" aria-hidden />
       <div className="parxis-aura parxis-aura-1" aria-hidden />
       <div className="parxis-aura parxis-aura-2" aria-hidden />
@@ -404,7 +404,6 @@ function ParxisMonogram() {
           <div className="parxis-surface" aria-hidden />
         </div>
       </div>
-      <div className="absolute bottom-10 font-serif text-5xl lg:text-6xl font-semibold tracking-[0.3em] parxis-gold-text" role="img" aria-label="PAX MED">PAX MED</div>
     </div>
   );
 }
@@ -980,12 +979,12 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         {/* Brand row — each logo + wordmark pair locked to the same baseline/center midpoint */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8 items-center pb-12 border-b border-[rgba(242,184,23,0.18)]">
-          {/* LEFT — PAX MED symbol on far left, text midpoint aligned to the logo's midpoint */}
+          {/* LEFT — PAXMED symbol on far left, text midpoint aligned to the logo's midpoint */}
           <div className="flex items-center justify-center md:justify-start gap-5 md:gap-8 h-[110px] sm:h-[128px] md:h-[144px]">
             <div className="h-[92px] sm:h-[108px] md:h-[124px] flex items-center justify-center shrink-0">
               <img
                 src={padaxorLogoAsset.url}
-                alt="PAX MED"
+                alt="PAXMED"
                 className="h-full w-auto shrink-0 select-none object-contain"
                 draggable={false}
               />
@@ -995,7 +994,7 @@ function Footer() {
                 {lang === "pt" ? "Sistema de Inteligência Clínica" : "Clinical Intelligence System"}
               </div>
               <div className="font-serif font-semibold text-[18px] sm:text-[20px] md:text-[24px] tracking-[0.14em] bg-gradient-to-b from-[#F2E1B8] via-[#C9A96E] to-[#8C6E2E] bg-clip-text text-transparent drop-shadow-[0_1px_10px_rgba(201,169,110,0.35)] leading-none">
-                PAX MED<span className="align-super text-[9px] sm:text-[10px] ml-0.5 text-[#C9A96E]">®</span>
+                PAXMED<span className="align-super text-[9px] sm:text-[10px] ml-0.5 text-[#C9A96E]">®</span>
               </div>
               <div className="font-serif text-[10px] sm:text-[11px] md:text-[12px] tracking-[0.08em] text-[#C9A96E]/75 whitespace-nowrap mt-1">
                 Clinical Intelligence System

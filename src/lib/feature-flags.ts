@@ -2,7 +2,7 @@
 // Feature flags — sinal simples para ligar/desligar comportamentos
 // sem redeploy. Ordem de precedência:
 //   1. localStorage "padaxor.flags" (JSON parcial) — override manual.
-//   2. window.__PADAXOR_FLAGS__ (injeção via <script> no HTML) — permite
+//   2. window.__PAXMED_FLAGS__ (injeção via <script> no HTML) — permite
 //      operação forçar um estado sem tocar no código.
 //   3. Defaults abaixo.
 // Server-side (SSR): sempre retorna defaults.
@@ -30,7 +30,7 @@ const STORAGE_KEY = "padaxor.flags";
 
 declare global {
   interface Window {
-    __PADAXOR_FLAGS__?: Partial<FeatureFlags>;
+    __PAXMED_FLAGS__?: Partial<FeatureFlags>;
   }
 }
 
@@ -43,7 +43,7 @@ export function getFlags(): FeatureFlags {
   } catch {
     /* noop */
   }
-  const injected = window.__PADAXOR_FLAGS__ ?? {};
+  const injected = window.__PAXMED_FLAGS__ ?? {};
   return { ...DEFAULT_FLAGS, ...injected, ...stored };
 }
 

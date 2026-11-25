@@ -80,14 +80,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Pax Med — Motor Clínico para Protocolos Injetáveis" },
-      { name: "description", content: "Pax Med é o motor clínico de excelência para clínicas de medicina integrativa: protocolos injetáveis, anamnese guiada, RAS assinado, receituário e apresentação premium — em uma única plataforma." },
-      { name: "author", content: "Pax Med" },
-      { property: "og:title", content: "Pax Med — Motor Clínico para Protocolos Injetáveis" },
+      { title: "PAXMED — Motor Clínico para Protocolos Injetáveis" },
+      { name: "description", content: "PAXMED é o motor clínico de excelência para clínicas de medicina integrativa: protocolos injetáveis, anamnese guiada, RAS assinado, receituário e apresentação premium — em uma única plataforma." },
+      { name: "author", content: "PAXMED" },
+      { property: "og:title", content: "PAXMED — Motor Clínico para Protocolos Injetáveis" },
       { property: "og:description", content: "A plataforma clínica das clínicas integrativas de alto padrão. Protocolos injetáveis com rigor, elegância e assinatura eletrônica." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Pax Med" },
+      { name: "twitter:site", content: "@PAXMED" },
     ],
     links: [
       {

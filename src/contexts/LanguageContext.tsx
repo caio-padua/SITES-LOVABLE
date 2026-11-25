@@ -17,10 +17,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         document.documentElement.lang = stored;
         return;
       }
-      const nav = (typeof navigator !== "undefined" && navigator.language) || "pt";
-      const initial: Lang = nav.toLowerCase().startsWith("pt") ? "pt" : "en";
-      setLangState(initial);
-      document.documentElement.lang = initial;
+      // Padrão sempre PT — o visitante só vê EN se escolher explicitamente.
+      setLangState("pt");
+      document.documentElement.lang = "pt";
     } catch {
       /* SSR / restricted storage — ignore */
     }

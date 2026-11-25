@@ -6,16 +6,16 @@ import { VitrineGate } from "@/components/VitrineGate";
 export const Route = createFileRoute("/demonstracao/paciente")({
   head: () => ({
     meta: [
-      { title: "Pax Med · Demonstração para Pacientes" },
+      { title: "PAXMED · Demonstração para Pacientes" },
       {
         name: "description",
         content:
-          "Demonstração privada do Pax Med para pacientes. Veja como a jornada clínica fica mais simples e segura.",
+          "Demonstração privada do PAXMED para pacientes. Veja como a jornada clínica fica mais simples e segura.",
       },
-      { property: "og:title", content: "Pax Med · Demonstração para Pacientes" },
+      { property: "og:title", content: "PAXMED · Demonstração para Pacientes" },
       {
         property: "og:description",
-        content: "Demonstração privada do Pax Med para pacientes.",
+        content: "Demonstração privada do PAXMED para pacientes.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

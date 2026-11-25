@@ -1,5 +1,5 @@
 // ------------------------------------------------------------------
-// Sessão do api-server Pax Med — helpers compartilhados.
+// Sessão do api-server PAXMED — helpers compartilhados.
 // Centraliza leitura/limpeza do token, verificação de expiração
 // (claim `exp` do JWT) e um `authFetch` que trata 401 de forma segura,
 // redirecionando para /login?expired=1 quando o token expira.

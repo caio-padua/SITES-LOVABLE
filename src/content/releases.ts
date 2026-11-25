@@ -48,10 +48,10 @@ export const releases: ReleaseEntry[] = [
   {
     version: "v1.5.0",
     date: "2026-07-24",
-    title: "Rodapé PAX MED + PADCON balanceado",
+    title: "Rodapé PAXMED + PADCON balanceado",
     changes: [
-      "Símbolos PAX MED (esquerda) e PADCON (direita) alinhados pelo ponto médio",
-      "Nova identidade PAX MED substituindo Pax Med nos selos institucionais",
+      "Símbolos PAXMED (esquerda) e PADCON (direita) alinhados pelo ponto médio",
+      "Nova identidade PAXMED substituindo PAXMED nos selos institucionais",
       "Bloco PADCON replicado na tela de login",
     ],
   },
@@ -95,7 +95,7 @@ export const releases: ReleaseEntry[] = [
   {
     version: "v1.0.0",
     date: "2026-07-14",
-    title: "Lançamento do Círculo Pax Med",
+    title: "Lançamento do Círculo PAXMED",
     changes: [
       "Copy com gatilhos de exclusividade e Solicitação de Indicação",
       "Painéis parallax em couro cognac e lã diagonal",

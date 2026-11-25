@@ -1,5 +1,5 @@
 // ------------------------------------------------------------------
-// ApiHealthBanner — sinal de degradação do api-server (Pax Med).
+// ApiHealthBanner — sinal de degradação do api-server (PAXMED).
 // Faz um GET /api/health silencioso a cada 30s. Após 2 falhas
 // consecutivas (timeout de 5s, rede ou 5xx), mostra um banner
 // discreto no topo. Volta ao normal em qualquer 2xx.

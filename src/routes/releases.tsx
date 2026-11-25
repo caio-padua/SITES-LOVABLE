@@ -34,11 +34,11 @@ const STATUS_COLOR: Record<string, string> = {
 export const Route = createFileRoute("/releases")({
   head: () => ({
     meta: [
-      { title: "Releases — Pax Med" },
-      { name: "description", content: "Histórico de versões e mudanças da plataforma Pax Med." },
+      { title: "Releases — PAXMED" },
+      { name: "description", content: "Histórico de versões e mudanças da plataforma PAXMED." },
       { name: "robots", content: "noindex" },
-      { property: "og:title", content: "Releases — Pax Med" },
-      { property: "og:description", content: "Changelog interno da plataforma Pax Med." },
+      { property: "og:title", content: "Releases — PAXMED" },
+      { property: "og:description", content: "Changelog interno da plataforma PAXMED." },
     ],
   }),
   component: ReleasesPage,

@@ -7,7 +7,7 @@ import type { Session } from "@supabase/supabase-js";
 export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
-      { title: "Pax Med · Painel de Leads" },
+      { title: "PAXMED · Painel de Leads" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),
@@ -79,7 +79,7 @@ function SignIn() {
     <section className="parxis-hero-bg min-h-screen flex items-center justify-center px-6 py-20">
       <div className="w-full max-w-md parxis-card rounded-lg p-10">
         <p className="text-[10px] uppercase tracking-[0.42em] text-[color:var(--gold)] mb-4 text-center">
-          Pax Med · Painel
+          PAXMED · Painel
         </p>
         <h1 className="font-serif text-3xl text-center mb-2">Acesso privado</h1>
         <div className="parxis-gold-rule w-24 mx-auto my-6" />
@@ -162,7 +162,7 @@ function LeadsPanel({ onSignOut }: { onSignOut: () => void }) {
     <section className="mx-auto max-w-7xl px-6 lg:px-10 py-14">
       <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
         <div>
-          <p className="text-[10px] uppercase tracking-[0.42em] text-[color:var(--gold)] mb-3">Pax Med · Painel</p>
+          <p className="text-[10px] uppercase tracking-[0.42em] text-[color:var(--gold)] mb-3">PAXMED · Painel</p>
           <h1 className="font-serif text-4xl md:text-5xl">Leads recebidos</h1>
           <div className="parxis-gold-rule w-24 mt-6" />
         </div>

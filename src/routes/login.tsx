@@ -34,7 +34,7 @@ import padconLogoAsset from "@/assets/padcon-logo-cropped.png.asset.json";
 import { PaxMedMonogram } from "@/components/PaxMedMonogram";
 
 // ------------------------------------------------------------------
-// Backend Pax Med (api-server) — autenticação de colaboradores.
+// Backend PAXMED (api-server) — autenticação de colaboradores.
 // Sobrescreve o VITE_API_URL quando o domínio próprio entrar no ar.
 // ------------------------------------------------------------------
 // Unificado em VITE_API_BASE_URL (mesma variável usada pelo portão da vitrine).
@@ -166,16 +166,16 @@ function redirectByRole(role: string) {
 export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
-      { title: "Pax Med · Acesso Clínico Reservado" },
+      { title: "PAXMED · Acesso Clínico Reservado" },
       {
         name: "description",
         content:
-          "Entrada privada ao motor clínico Pax Med. Acesso para médicos, clínicas e pacientes, com autenticação segura.",
+          "Entrada privada ao motor clínico PAXMED. Acesso para médicos, clínicas e pacientes, com autenticação segura.",
       },
-      { property: "og:title", content: "Pax Med · Acesso Clínico Reservado" },
+      { property: "og:title", content: "PAXMED · Acesso Clínico Reservado" },
       {
         property: "og:description",
-        content: "Entrada privada dos médicos licenciados no Pax Med.",
+        content: "Entrada privada dos médicos licenciados no PAXMED.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -189,7 +189,7 @@ export const Route = createFileRoute("/login")({
 
 const COPY = {
   eyebrow: { pt: "Acesso reservado", en: "Reserved access" },
-  brand: { pt: "PAX MED", en: "PAX MED" },
+  brand: { pt: "PAXMED", en: "PAXMED" },
   headline: {
     pt: "Entre no motor clínico.",
     en: "Enter the clinical engine.",
@@ -201,7 +201,7 @@ const COPY = {
   tabIn: { pt: "Entrar", en: "Sign in" },
   email: { pt: "E-mail ou CPF", en: "Email or CPF" },
   password: { pt: "Senha", en: "Password" },
-  submitIn: { pt: "Acessar Pax Med", en: "Enter Pax Med" },
+  submitIn: { pt: "Acessar PAXMED", en: "Enter PAXMED" },
   forgot: { pt: "Esqueci minha senha", en: "I forgot my password" },
   loading: { pt: "Aguarde…", en: "Please wait…" },
   success: {
@@ -243,8 +243,8 @@ const COPY = {
     en: "Credentials not recognized",
   },
   invalidCredentialsReason: {
-    pt: "O usuário ou a senha não conferem. Confira maiúsculas, minúsculas e o layout do teclado e tente novamente. Se o problema persistir, fale com o administrador do seu Círculo — as contas Pax Med são criadas por indicação.",
-    en: "The username or password does not match. Check letter case and keyboard layout, then try again. If it persists, contact your Circle administrator — Pax Med accounts are created by invitation.",
+    pt: "O usuário ou a senha não conferem. Confira maiúsculas, minúsculas e o layout do teclado e tente novamente. Se o problema persistir, fale com o administrador do seu Círculo — as contas PAXMED são criadas por indicação.",
+    en: "The username or password does not match. Check letter case and keyboard layout, then try again. If it persists, contact your Circle administrator — PAXMED accounts are created by invitation.",
   },
   invalidCredentialsRetry: {
     pt: "Tentar novamente",
@@ -274,8 +274,8 @@ const CERTS: Cert[] = [
       en: "Highest-assurance delegated authentication — no password in transit.",
     },
     detail: {
-      pt: "O acesso pode ser feito pelo protocolo OAuth 2.1 com Sign in with Google, o padrão de mais alto nível disponível hoje. A Pax Med nunca recebe sua senha do Google — apenas um token efêmero, assinado, com escopo mínimo e rotação automática. PKCE obrigatório em todos os fluxos.",
-      en: "Access is delegated via OAuth 2.1 with Sign in with Google — today's highest-assurance standard. Pax Med never receives your Google password, only a signed ephemeral token with minimum scope and automatic rotation. PKCE is enforced on every flow.",
+      pt: "O acesso pode ser feito pelo protocolo OAuth 2.1 com Sign in with Google, o padrão de mais alto nível disponível hoje. A PAXMED nunca recebe sua senha do Google — apenas um token efêmero, assinado, com escopo mínimo e rotação automática. PKCE obrigatório em todos os fluxos.",
+      en: "Access is delegated via OAuth 2.1 with Sign in with Google — today's highest-assurance standard. PAXMED never receives your Google password, only a signed ephemeral token with minimum scope and automatic rotation. PKCE is enforced on every flow.",
     },
   },
   {
@@ -287,8 +287,8 @@ const CERTS: Cert[] = [
       en: "Passwords cross-checked against billions of leaked credentials worldwide.",
     },
     detail: {
-      pt: "Toda senha cadastrada é conferida contra o corpus HIBP (Have I Been Pwned) — um banco mundial de bilhões de credenciais expostas em vazamentos. Se sua senha aparecer em qualquer incidente conhecido, a Pax Med bloqueia o cadastro antes que o risco chegue à sua clínica. A verificação é feita com hashing parcial (k-anonymity): sua senha nunca sai do dispositivo em texto claro.",
-      en: "Every submitted password is checked against the HIBP (Have I Been Pwned) corpus — a global database of billions of credentials exposed in breaches. If your password appears in any known incident, Pax Med blocks the registration before the risk touches your clinic. The check uses k-anonymity partial hashing: your password never leaves your device in clear text.",
+      pt: "Toda senha cadastrada é conferida contra o corpus HIBP (Have I Been Pwned) — um banco mundial de bilhões de credenciais expostas em vazamentos. Se sua senha aparecer em qualquer incidente conhecido, a PAXMED bloqueia o cadastro antes que o risco chegue à sua clínica. A verificação é feita com hashing parcial (k-anonymity): sua senha nunca sai do dispositivo em texto claro.",
+      en: "Every submitted password is checked against the HIBP (Have I Been Pwned) corpus — a global database of billions of credentials exposed in breaches. If your password appears in any known incident, PAXMED blocks the registration before the risk touches your clinic. The check uses k-anonymity partial hashing: your password never leaves your device in clear text.",
     },
   },
   {
@@ -300,8 +300,8 @@ const CERTS: Cert[] = [
       en: "All traffic travels in a modern end-to-end encrypted channel.",
     },
     detail: {
-      pt: "Todo o tráfego entre o seu navegador e o motor clínico Pax Med viaja sobre TLS 1.3 — a geração mais atual do protocolo, com handshake reduzido, forward secrecy obrigatório e ciphers legados desativados. Isso impede que redes intermediárias, provedores ou terceiros consigam ler ou alterar as requisições em trânsito.",
-      en: "All traffic between your browser and the Pax Med clinical engine flows over TLS 1.3 — the most current generation of the protocol, with reduced handshake, mandatory forward secrecy and legacy ciphers disabled. This prevents intermediary networks, providers or third parties from reading or tampering with requests in transit.",
+      pt: "Todo o tráfego entre o seu navegador e o motor clínico PAXMED viaja sobre TLS 1.3 — a geração mais atual do protocolo, com handshake reduzido, forward secrecy obrigatório e ciphers legados desativados. Isso impede que redes intermediárias, provedores ou terceiros consigam ler ou alterar as requisições em trânsito.",
+      en: "All traffic between your browser and the PAXMED clinical engine flows over TLS 1.3 — the most current generation of the protocol, with reduced handshake, mandatory forward secrecy and legacy ciphers disabled. This prevents intermediary networks, providers or third parties from reading or tampering with requests in transit.",
     },
   },
   {
@@ -313,8 +313,8 @@ const CERTS: Cert[] = [
       en: "Clinical data isolated at the row level — each clinic sees only its own.",
     },
     detail: {
-      pt: "A Pax Med opera em conformidade com a LGPD e usa Row-Level Security (RLS) no banco de dados: cada registro clínico carrega o vínculo da clínica proprietária, e o motor bloqueia no núcleo qualquer leitura fora desse escopo. Nenhum médico, operador ou administrador cruza dados de clínicas diferentes — o isolamento é técnico, não apenas contratual.",
-      en: "Pax Med is LGPD-compliant and uses Row-Level Security (RLS) at the database layer: every clinical record carries its owning clinic, and the engine blocks any read outside that scope at the core. No physician, operator or administrator can cross data between clinics — the isolation is technical, not merely contractual.",
+      pt: "A PAXMED opera em conformidade com a LGPD e usa Row-Level Security (RLS) no banco de dados: cada registro clínico carrega o vínculo da clínica proprietária, e o motor bloqueia no núcleo qualquer leitura fora desse escopo. Nenhum médico, operador ou administrador cruza dados de clínicas diferentes — o isolamento é técnico, não apenas contratual.",
+      en: "PAXMED is LGPD-compliant and uses Row-Level Security (RLS) at the database layer: every clinical record carries its owning clinic, and the engine blocks any read outside that scope at the core. No physician, operator or administrator can cross data between clinics — the isolation is technical, not merely contractual.",
     },
   },
 ];
@@ -387,7 +387,7 @@ function LoginPage() {
       /* noop */
     }
 
-    // 1) Sessão do api-server (token Pax Med) — prioridade.
+    // 1) Sessão do api-server (token PAXMED) — prioridade.
     const token = readStoredToken();
     if (token) {
       // Se o JWT já expirou localmente, não tenta usá-lo: limpa e mostra login.
@@ -603,7 +603,7 @@ function LoginPage() {
       <header className="relative z-20 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 sm:px-6 md:px-10 py-5 sm:py-6">
         <Link to="/" className="flex min-w-0 items-center gap-2 sm:gap-3 group">
           <PaxMedMonogram size={44} />
-          <span className="font-serif text-[22px] sm:text-[26px] font-semibold tracking-[0.18em] sm:tracking-[0.22em] parxis-gold-text whitespace-nowrap">PAX MED</span>
+          <span className="font-serif text-[22px] sm:text-[26px] font-semibold tracking-[0.18em] sm:tracking-[0.22em] parxis-gold-text whitespace-nowrap">PAXMED</span>
         </Link>
         <div className="flex items-center gap-3">
           {storedSession && (

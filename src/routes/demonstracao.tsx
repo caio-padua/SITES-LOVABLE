@@ -11,16 +11,16 @@ const atelierMobileUrl = atelierMobileAsset.url;
 export const Route = createFileRoute("/demonstracao")({
   head: () => ({
     meta: [
-      { title: "Pax Med · Demonstração Privada" },
+      { title: "PAXMED · Demonstração Privada" },
       {
         name: "description",
         content:
-          "Entrada privada para a demonstração do motor clínico Pax Med. Por convite e identificação.",
+          "Entrada privada para a demonstração do motor clínico PAXMED. Por convite e identificação.",
       },
-      { property: "og:title", content: "Pax Med · Demonstração Privada" },
+      { property: "og:title", content: "PAXMED · Demonstração Privada" },
       {
         property: "og:description",
-        content: "Entrada privada para a demonstração do motor clínico Pax Med.",
+        content: "Entrada privada para a demonstração do motor clínico PAXMED.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -51,7 +51,7 @@ function DemonstracaoLayout() {
           <PaxterMedalhao size={44} className="shrink-0" />
           <img
             src={parxisWordmark}
-            alt="Pax Med"
+            alt="PAXMED"
             className="h-6 sm:h-7 md:h-8 w-auto opacity-95 group-hover:opacity-100 transition-opacity"
           />
         </Link>

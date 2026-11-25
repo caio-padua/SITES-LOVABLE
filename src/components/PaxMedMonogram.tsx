@@ -1,7 +1,7 @@
-/** Emblema minimalista PAX MED — anel duplo dourado com monograma "PM". */
+/** Emblema minimalista PAXMED — anel duplo dourado com monograma "PM". */
 export function PaxMedMonogram({ size = 36, className = "" }: { size?: number; className?: string }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64" role="img" aria-label="Emblema PAX MED" className={"shrink-0 " + className}>
+    <svg width={size} height={size} viewBox="0 0 64 64" role="img" aria-label="Emblema PAXMED" className={"shrink-0 " + className}>
       <defs>
         <linearGradient id="pmGold" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#F4E4B8" />
