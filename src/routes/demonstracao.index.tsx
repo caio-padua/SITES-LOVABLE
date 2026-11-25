@@ -3,6 +3,16 @@ import { useLang, tr } from "@/contexts/LanguageContext";
 import { content } from "@/content/parxis";
 
 export const Route = createFileRoute("/demonstracao/")({
+  head: () => ({
+    meta: [
+      { title: "PAXMED · Escolha sua Demonstração" },
+      { name: "description", content: "Escolha a demonstração PAXMED para clínicas ou pacientes." },
+      { property: "og:title", content: "PAXMED · Escolha sua Demonstração" },
+      { property: "og:description", content: "Escolha a demonstração PAXMED para clínicas ou pacientes." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: DemonstracaoIndexPage,
 });
 

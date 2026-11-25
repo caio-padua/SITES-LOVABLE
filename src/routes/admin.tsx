@@ -8,6 +8,11 @@ export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
       { title: "PAXMED · Painel de Leads" },
+      { name: "description", content: "Gestão privada de solicitações e contatos PAXMED." },
+      { property: "og:title", content: "PAXMED · Painel de Leads" },
+      { property: "og:description", content: "Gestão privada de solicitações e contatos PAXMED." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),

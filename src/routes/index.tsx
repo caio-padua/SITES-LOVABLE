@@ -16,7 +16,7 @@ import { useLang, tr, formatNumber, type Lang } from "@/contexts/LanguageContext
 import { content } from "@/content/parxis";
 import { GoldCorners } from "@/components/GoldCorners";
 import { LangSwitcher } from "@/components/LangSwitcher";
-import { PaxterMedalhao } from "@/components/PaxterMedalhao";
+import { PaxmedLiveLogo } from "@/components/PaxmedLiveLogo";
 
 void ampoulesWideAsset;
 const heroBg4K = atelierWideAsset;
@@ -29,6 +29,16 @@ const parxisSymbolUrl = parxisSymbolAsset.url;
 const parxisWordmarkUrl = parxisWordmarkAsset.url;
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "PAXMED — Inteligência Clínica para Protocolos Injetáveis" },
+      { name: "description", content: "PAXMED: inteligência clínica para médicos e clínicas integrativas, da consulta aos protocolos injetáveis." },
+      { property: "og:title", content: "PAXMED — Inteligência Clínica para Protocolos Injetáveis" },
+      { property: "og:description", content: "Conheça a plataforma PAXMED para médicos e clínicas integrativas." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
@@ -82,13 +92,7 @@ function Nav() {
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-[rgba(5,5,5,0.62)] border-b border-[rgba(242,184,23,0.12)]">
       <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-10 h-14 sm:h-16 grid grid-cols-[minmax(0,1fr)_auto] xl:flex items-center justify-between gap-3 sm:gap-6">
         <a href="#top" aria-label="PAXMED — ir para o topo" className={"flex items-center gap-3 min-w-0 " + link}>
-          <PaxterMedalhao size={38} />
-          <span className="flex flex-col justify-center min-w-0 leading-none">
-            <span className="font-serif text-[18px] sm:text-[24px] font-semibold tracking-[0.14em] sm:tracking-[0.22em] parxis-gold-text whitespace-nowrap leading-tight">PAXMED</span>
-            <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.28em] text-[color:var(--gold)] opacity-80 whitespace-nowrap mt-0.5">
-              {tr(c.tagline, lang)}
-            </span>
-          </span>
+          <PaxmedLiveLogo />
         </a>
         <nav aria-label="Seções" className="hidden xl:flex items-center gap-7 text-xs uppercase tracking-[0.2em] text-muted-foreground">
           <a href="#manifesto" className={link}>{tr(c.links.manifesto, lang)}</a>

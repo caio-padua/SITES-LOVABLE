@@ -2257,3 +2257,25 @@ html[data-contrast="high"] .parxis-wordmark.paxmed-wordmark-art {
 @media (max-width: 767px) {
   .parxis-wordmark.paxmed-wordmark-art { width: min(76vw, 320px); }
 }
+
+/* Header-only official lockup; the hero keeps its original scene and animation. */
+:root {
+  --paxmed-champagne-top: #F5E6C4;
+  --paxmed-champagne-mid: #D4AF6A;
+  --paxmed-champagne-deep: #8E692C;
+  --paxmed-champagne-brushed: linear-gradient(180deg, var(--paxmed-champagne-top), var(--paxmed-champagne-mid) 52%, var(--paxmed-champagne-deep));
+}
+.paxmed-live-logo { display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.paxmed-live-logo-copy { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.paxmed-live-logo-word { width: 120px !important; aspect-ratio: 1830 / 316; }
+.paxmed-live-logo-subtitle {
+  font-size: 8px; line-height: 1; letter-spacing: 0; white-space: nowrap;
+  background: var(--paxmed-champagne-brushed); background-clip: text;
+  -webkit-background-clip: text; color: transparent; opacity: .85;
+}
+@media (min-width: 640px) { .paxmed-live-logo-word { width: 150px !important; } }
+html[data-motion="reduce"] .paxmed-live-logo *,
+html[data-motion="reduce"] .paxmed-live-logo *::before,
+html[data-motion="reduce"] .paxmed-live-logo *::after { animation: none !important; }
+html[data-motion="reduce"] .paxmed-live-logo .tf-flash { display: none; }
+html[data-motion="reduce"] .paxmed-live-logo .tf-sweep { opacity: 0; }

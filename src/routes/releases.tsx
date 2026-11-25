@@ -39,6 +39,8 @@ export const Route = createFileRoute("/releases")({
       { name: "robots", content: "noindex" },
       { property: "og:title", content: "Releases — PAXMED" },
       { property: "og:description", content: "Changelog interno da plataforma PAXMED." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: ReleasesPage,

@@ -25,6 +25,10 @@ export const Route = createFileRoute("/login/diag")({
     meta: [
       { title: "Diagnóstico de Login — PAXMED" },
       { name: "description", content: "Diagnóstico interno de autenticação PAXMED." },
+      { property: "og:title", content: "Diagnóstico de Login — PAXMED" },
+      { property: "og:description", content: "Diagnóstico interno de autenticação PAXMED." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "robots", content: "noindex,nofollow" },
     ],
   }),

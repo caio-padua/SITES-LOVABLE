@@ -9,6 +9,8 @@ export const Route = createFileRoute("/status")({
       { name: "robots", content: "noindex" },
       { property: "og:title", content: "Status — PAXMED" },
       { property: "og:description", content: "Verificação de disponibilidade do site PAXMED." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: StatusPage,
