@@ -31,7 +31,7 @@ import atelierMobileAsset from "@/assets/parxis-atelier-v15-camelo-mobile.webp.a
 const atelierUrl = atelierAsset.url;
 const atelierMobileUrl = atelierMobileAsset.url;
 import padconLogoAsset from "@/assets/padcon-logo-cropped.png.asset.json";
-import { PaxMedMonogram } from "@/components/PaxMedMonogram";
+import { PaxterMedalhao } from "@/components/PaxterMedalhao";
 
 // ------------------------------------------------------------------
 // Backend PAXMED (api-server) — autenticação de colaboradores.
@@ -602,7 +602,7 @@ function LoginPage() {
 
       <header className="relative z-20 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 sm:px-6 md:px-10 py-5 sm:py-6">
         <Link to="/" className="flex min-w-0 items-center gap-2 sm:gap-3 group">
-          <PaxMedMonogram size={44} />
+          <PaxterMedalhao size={44} />
           <span className="font-serif text-[22px] sm:text-[26px] font-semibold tracking-[0.18em] sm:tracking-[0.22em] parxis-gold-text whitespace-nowrap">PAXMED</span>
         </Link>
         <div className="flex items-center gap-3">

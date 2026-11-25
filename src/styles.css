@@ -2226,3 +2226,23 @@ html[data-motion="reduce"] .parxis-corner-pulse {
   .parxis-cert-tip { max-width: 160px; font-size: 11px; padding: 7px 10px; margin-bottom: 8px; }
   .parxis-cert-tip__arrow { border-left-width: 5px; border-right-width: 5px; border-top-width: 5px; }
 }
+
+/* Wordmark PAXMED em texto — ouro escovado (substitui a imagem PARXIS; posição herdada de .parxis-wordmark) */
+.parxis-wordmark.paxmed-wordmark-text {
+  background-image: linear-gradient(180deg, #fbeec2 0%, #e8cf8a 22%, #c9a86c 48%, #8a6a33 62%, #d9bd7f 80%, #a6884b 100%);
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  aspect-ratio: auto;
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Michroma", "Cormorant Garamond", sans-serif;
+  font-weight: 400;
+  font-size: clamp(34px, 3.9vw, 52px);
+  letter-spacing: 0.08em;
+  line-height: 1;
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .parxis-wordmark.paxmed-wordmark-text { font-size: clamp(28px, 9vw, 40px); }
+}

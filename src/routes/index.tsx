@@ -15,7 +15,6 @@ import { useLang, tr, formatNumber, type Lang } from "@/contexts/LanguageContext
 import { content } from "@/content/parxis";
 import { GoldCorners } from "@/components/GoldCorners";
 import { LangSwitcher } from "@/components/LangSwitcher";
-import { PaxMedMonogram } from "@/components/PaxMedMonogram";
 import { PaxterMedalhao } from "@/components/PaxterMedalhao";
 
 void ampoulesWideAsset;
@@ -82,7 +81,7 @@ function Nav() {
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-[rgba(5,5,5,0.62)] border-b border-[rgba(242,184,23,0.12)]">
       <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-10 h-14 sm:h-16 grid grid-cols-[minmax(0,1fr)_auto] xl:flex items-center justify-between gap-3 sm:gap-6">
         <a href="#top" aria-label="PAXMED — ir para o topo" className={"flex items-center gap-3 min-w-0 " + link}>
-          <PaxMedMonogram size={34} />
+          <PaxterMedalhao size={38} />
           <span className="flex flex-col justify-center min-w-0 leading-none">
             <span className="font-serif text-[18px] sm:text-[24px] font-semibold tracking-[0.14em] sm:tracking-[0.22em] parxis-gold-text whitespace-nowrap leading-tight">PAXMED</span>
             <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.28em] text-[color:var(--gold)] opacity-80 whitespace-nowrap mt-0.5">
@@ -397,13 +396,14 @@ function ParxisMonogram() {
       <div className="parxis-symbol-wrap" aria-hidden>
         <div className="parxis-symbol-tilt">
           <div className="parxis-symbol-levitate">
-            <PaxMedMonogram size={300} className="drop-shadow-[0_10px_40px_rgba(201,169,110,0.35)]" />
+            <div className="parxis-symbol-img" role="img" aria-label="Símbolo PAXMED" />
             <div className="parxis-symbol-sheen" aria-hidden />
           </div>
           <div className="parxis-shadow" aria-hidden />
           <div className="parxis-surface" aria-hidden />
         </div>
       </div>
+      <div className="parxis-wordmark paxmed-wordmark-text" role="img" aria-label="PAXMED">PAXMED</div>
     </div>
   );
 }
