@@ -752,8 +752,9 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  /* Suaviza o dourado do PNG — menos laranja, mais champagne */
-  filter: saturate(0.72) hue-rotate(-8deg) brightness(1.04);
+  /* Arte já é champanhe (#F5E6C4 -> #D4AF6A -> #8E692C): nenhum filtro de matiz,
+     para não reavivar o cobre. O relevo vem do próprio PNG. */
+  filter: none;
 }
 
 /* Luz-sweep prismática que atravessa o símbolo */
@@ -822,9 +823,9 @@
     height: min(78vw, 330px);
   }
 
-  /* Reforça o champagne suave no mobile: menos saturação e húe mais neutro. */
+  /* Champanhe neutro no mobile: a arte já carrega a rampa, sem filtro de matiz. */
   .parxis-symbol-img {
-    filter: saturate(0.58) hue-rotate(-12deg) brightness(1.06) !important;
+    filter: none !important;
   }
 
   .parxis-wordmark {
@@ -1196,7 +1197,7 @@ html[data-contrast="high"] .parxis-leather-bg::before {
 }
 
 html[data-contrast="high"] .parxis-symbol-img {
-  filter: saturate(0.85) hue-rotate(-6deg) brightness(1.12) drop-shadow(0 0 18px color-mix(in oklch, var(--gold) 45%, transparent 55%));
+  filter: brightness(1.06) drop-shadow(0 0 18px color-mix(in oklch, var(--gold) 45%, transparent 55%));
 }
 
 html[data-contrast="high"] .parxis-wordmark {

@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useIsMobile } from "@/hooks/use-mobile";
-import parxisSymbolAsset from "@/assets/parxis-symbol.png.asset.json";
+import parxisSymbolAsset from "@/assets/paxmed-symbol-hero-champagne.png.asset.json";
 import parxisWordmarkAsset from "@/assets/parxis-wordmark.png.asset.json";
 import padconLogoAsset from "@/assets/padcon-logo-cropped.png.asset.json";
 import padaxorLogoAsset from "@/assets/padaxor-logo.png.asset.json";
