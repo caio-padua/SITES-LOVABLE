@@ -32,7 +32,11 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "PAXMED — Inteligência Clínica para Protocolos Injetáveis" },
-      { name: "description", content: "PAXMED: inteligência clínica para médicos e clínicas integrativas, da consulta aos protocolos injetáveis." },
+      {
+        name: "description",
+        content:
+          "PAXMED: inteligência clínica para médicos e clínicas integrativas, da consulta aos protocolos injetáveis.",
+      },
       { property: "og:title", content: "PAXMED — Inteligência Clínica para Protocolos Injetáveis" },
       { property: "og:description", content: "Conheça a plataforma PAXMED para médicos e clínicas integrativas." },
       { property: "og:type", content: "website" },
@@ -87,23 +91,39 @@ function Index() {
 function Nav() {
   const { lang } = useLang();
   const c = content.nav;
-  const link = "whitespace-nowrap rounded-sm hover:text-[color:var(--gold)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-black";
+  const link =
+    "whitespace-nowrap rounded-sm hover:text-[color:var(--gold)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-black";
   return (
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-[rgba(5,5,5,0.62)] border-b border-[rgba(242,184,23,0.12)]">
       <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-10 h-14 sm:h-16 grid grid-cols-[minmax(0,1fr)_auto] xl:flex items-center justify-between gap-3 sm:gap-6">
         <a href="#top" aria-label="PAXMED — ir para o topo" className={"flex items-center gap-3 min-w-0 " + link}>
           <PaxmedLiveLogo />
         </a>
-        <nav aria-label="Seções" className="hidden xl:flex items-center gap-7 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-          <a href="#manifesto" className={link}>{tr(c.links.manifesto, lang)}</a>
-          <a href="#recursos" className={link}>{tr(c.links.features, lang)}</a>
-          <a href="#tecnologia" className={link}>{tr(c.links.technology, lang)}</a>
-          <a href="#clinicas" className={link}>{tr(c.links.circle, lang)}</a>
-          <a href="#ecossistema" className={link}>{tr(c.links.ecosystem, lang)}</a>
+        <nav
+          aria-label="Seções"
+          className="hidden xl:flex items-center gap-7 text-xs uppercase tracking-[0.2em] text-muted-foreground"
+        >
+          <a href="#manifesto" className={link}>
+            {tr(c.links.manifesto, lang)}
+          </a>
+          <a href="#recursos" className={link}>
+            {tr(c.links.features, lang)}
+          </a>
+          <a href="#tecnologia" className={link}>
+            {tr(c.links.technology, lang)}
+          </a>
+          <a href="#clinicas" className={link}>
+            {tr(c.links.circle, lang)}
+          </a>
+          <a href="#ecossistema" className={link}>
+            {tr(c.links.ecosystem, lang)}
+          </a>
         </nav>
         <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           <ContrastToggle />
-          <span className="hidden sm:contents"><MotionToggle /></span>
+          <span className="hidden sm:contents">
+            <MotionToggle />
+          </span>
           <LangSwitcher />
         </div>
       </div>
@@ -123,11 +143,22 @@ function Nav() {
 function AccessLinks({ large = false }: { large?: boolean }) {
   const { lang } = useLang();
   const c = content.nav;
-  const cls = "parxis-btn parxis-btn-ghost " + (large ? "" : "parxis-btn-sm !px-2 sm:!px-4 !tracking-[0.08em] sm:!tracking-[0.2em]");
+  const cls =
+    "parxis-btn parxis-btn-ghost " +
+    (large ? "" : "parxis-btn-sm !px-2 sm:!px-4 !tracking-[0.08em] sm:!tracking-[0.2em]");
   return (
     <>
       <RLink to="/login" search={{ perfil: "medico" }} className={cls}>
-        <span className="parxis-btn-inner whitespace-nowrap">{large ? tr(c.doctor, lang) : <><span className="sm:hidden">{lang === "pt" ? "Médico / Clínica" : "Physician / Clinic"}</span><span className="hidden sm:inline">{tr(c.doctor, lang)}</span></>}</span>
+        <span className="parxis-btn-inner whitespace-nowrap">
+          {large ? (
+            tr(c.doctor, lang)
+          ) : (
+            <>
+              <span className="sm:hidden">{lang === "pt" ? "Médico / Clínica" : "Physician / Clinic"}</span>
+              <span className="hidden sm:inline">{tr(c.doctor, lang)}</span>
+            </>
+          )}
+        </span>
       </RLink>
       <RLink to="/login" search={{ perfil: "paciente" }} className={cls}>
         <span className="parxis-btn-inner whitespace-nowrap">{tr(c.patient, lang)}</span>
@@ -170,7 +201,17 @@ function MotionToggle() {
       title={title}
       className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(242,184,23,0.3)] text-[color:var(--gold)] hover:bg-[rgba(242,184,23,0.08)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
     >
-      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        aria-hidden="true"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         {reduced ? (
           <>
             <circle cx="12" cy="12" r="9" />
@@ -202,8 +243,7 @@ function ContrastToggle() {
 
   useEffect(() => {
     const raw = localStorage.getItem("parxis-contrast");
-    const stored: ContrastMode | null =
-      raw === "light" || raw === "normal" ? (raw as ContrastMode) : null;
+    const stored: ContrastMode | null = raw === "light" || raw === "normal" ? (raw as ContrastMode) : null;
     const initial: ContrastMode = stored ?? "normal";
     document.documentElement.dataset.contrast = initial;
     setMode(initial);
@@ -229,7 +269,17 @@ function ContrastToggle() {
       title={title}
       className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(242,184,23,0.3)] text-[color:var(--gold)] hover:bg-[rgba(242,184,23,0.08)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
     >
-      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        aria-hidden="true"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         {light ? (
           <>
             <path d="M12 2v20" />
@@ -273,8 +323,8 @@ function Hero() {
             {tr(c.eyebrow, lang)}
           </p>
           <h1 className="parxis-enter parxis-enter-2 font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
-            {tr(c.titlePre, lang)}{" "}
-            <span className="parxis-gold-text italic">{tr(c.titleGold, lang)}</span>{tr(c.titlePost, lang)}
+            {tr(c.titlePre, lang)} <span className="parxis-gold-text italic">{tr(c.titleGold, lang)}</span>
+            {tr(c.titlePost, lang)}
           </h1>
           <div className="parxis-enter parxis-enter-3 parxis-gold-rule w-32 my-10" />
           <p className="parxis-enter parxis-enter-3 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl font-light">
@@ -285,7 +335,9 @@ function Hero() {
             <a href="#contato" className="parxis-btn parxis-btn-primary group">
               <span className="parxis-btn-inner">
                 {tr(c.ctaPrimary, lang)}
-                <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+                <span aria-hidden className="transition-transform group-hover:translate-x-1">
+                  →
+                </span>
               </span>
             </a>
           </div>
@@ -297,7 +349,9 @@ function Hero() {
             {c.stats.map((it, i) => (
               <div key={i}>
                 <div className="font-serif text-3xl text-[color:var(--gold)]">{tr(it.k, lang)}</div>
-                <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1 leading-snug">{tr(it.v, lang)}</div>
+                <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1 leading-snug">
+                  {tr(it.v, lang)}
+                </div>
               </div>
             ))}
           </div>
@@ -316,15 +370,15 @@ function ParallaxPanels() {
   const isMobile = useIsMobile();
   const amplitude = isMobile ? 0.42 : 1;
   const lerp = isMobile ? 0.08 : 0.12;
-  const speeds = isMobile
-    ? [0.09, -0.13, 0.17, -0.07, 0.04]
-    : [0.22, -0.32, 0.42, -0.18, 0.1];
+  const speeds = isMobile ? [0.09, -0.13, 0.17, -0.07, 0.04] : [0.22, -0.32, 0.42, -0.18, 0.1];
 
   useEffect(() => {
     if (document.documentElement.dataset.motion === "reduce") return;
     let targetY = 0;
     let currentY = 0;
-    const onScroll = () => { targetY = window.scrollY; };
+    const onScroll = () => {
+      targetY = window.scrollY;
+    };
     const tick = () => {
       currentY += (targetY - currentY) * lerp;
       panelRefs.current.forEach((el, i) => {
@@ -348,7 +402,9 @@ function ParallaxPanels() {
       {[...Array(5)].map((_, i) => (
         <div
           key={i}
-          ref={(el) => { panelRefs.current[i] = el; }}
+          ref={(el) => {
+            panelRefs.current[i] = el;
+          }}
           className={`parxis-panel parxis-panel-${i + 1}`}
         />
       ))}
@@ -363,13 +419,19 @@ function ParxisMonogram() {
     const el = stageRef.current;
     if (!el) return;
     let raf = 0;
-    let targetX = 0, targetY = 0, curX = 0, curY = 0;
+    let targetX = 0,
+      targetY = 0,
+      curX = 0,
+      curY = 0;
     const onMove = (e: PointerEvent) => {
       const r = el.getBoundingClientRect();
       targetX = ((e.clientX - r.left) / r.width - 0.5) * 2;
       targetY = ((e.clientY - r.top) / r.height - 0.5) * 2;
     };
-    const onLeave = () => { targetX = 0; targetY = 0; };
+    const onLeave = () => {
+      targetX = 0;
+      targetY = 0;
+    };
     const tick = () => {
       curX += (targetX - curX) * 0.08;
       curY += (targetY - curY) * 0.08;
@@ -388,7 +450,11 @@ function ParxisMonogram() {
   }, []);
 
   return (
-    <div ref={stageRef} className="parxis-stage relative flex items-center justify-center min-h-[560px] lg:min-h-[640px]" aria-label="PAXMED">
+    <div
+      ref={stageRef}
+      className="parxis-stage relative flex items-center justify-center min-h-[560px] lg:min-h-[640px]"
+      aria-label="PAXMED"
+    >
       <div className="parxis-halo-conic" aria-hidden />
       <div className="parxis-aura parxis-aura-1" aria-hidden />
       <div className="parxis-aura parxis-aura-2" aria-hidden />
@@ -408,7 +474,12 @@ function ParxisMonogram() {
           <div className="parxis-surface" aria-hidden />
         </div>
       </div>
-      <div className="parxis-wordmark paxmed-wordmark-art" role="img" aria-label="PAXMED" style={{ backgroundImage: `url(${paxmedWordmarkArt.url})` }} />
+      <div
+        className="parxis-wordmark paxmed-wordmark-art"
+        role="img"
+        aria-label="PAXMED"
+        style={{ backgroundImage: `url(${paxmedWordmarkArt.url})` }}
+      />
     </div>
   );
 }
@@ -420,16 +491,14 @@ function Manifesto() {
   return (
     <section id="manifesto" className="parxis-glass relative py-28 lg:py-40">
       <div className="mx-auto max-w-4xl px-6 lg:px-10 text-center">
-        <p className="text-[10px] uppercase tracking-[0.42em] text-[color:var(--gold)] mb-8">
-          {tr(c.eyebrow, lang)}
-        </p>
+        <p className="text-[10px] uppercase tracking-[0.42em] text-[color:var(--gold)] mb-8">{tr(c.eyebrow, lang)}</p>
         <h2 className="font-serif text-3xl md:text-5xl leading-tight text-foreground">
-          {tr(c.titlePre, lang)}<em className="parxis-gold-text not-italic">{tr(c.titleGold, lang)}</em>{tr(c.titlePost, lang)}
+          {tr(c.titlePre, lang)}
+          <em className="parxis-gold-text not-italic">{tr(c.titleGold, lang)}</em>
+          {tr(c.titlePost, lang)}
         </h2>
         <div className="parxis-gold-rule w-40 mx-auto my-10" />
-        <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed">
-          {tr(c.body, lang)}
-        </p>
+        <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed">{tr(c.body, lang)}</p>
       </div>
     </section>
   );
@@ -444,11 +513,11 @@ function Features() {
       <div className="parxis-bordo-stitch-frame" aria-hidden />
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="max-w-3xl mb-20">
-          <p className="text-[10px] uppercase tracking-[0.42em] text-[color:var(--gold)] mb-6">
-            {tr(c.eyebrow, lang)}
-          </p>
+          <p className="text-[10px] uppercase tracking-[0.42em] text-[color:var(--gold)] mb-6">{tr(c.eyebrow, lang)}</p>
           <h2 className="font-serif text-4xl md:text-5xl leading-tight">
-            {tr(c.titlePre, lang)}<em className="parxis-gold-text not-italic">{tr(c.titleGold, lang)}</em>{tr(c.titlePost, lang)}
+            {tr(c.titlePre, lang)}
+            <em className="parxis-gold-text not-italic">{tr(c.titleGold, lang)}</em>
+            {tr(c.titlePost, lang)}
           </h2>
           <div className="parxis-gold-rule w-32 mt-8" />
         </div>
@@ -475,11 +544,11 @@ function Technology() {
     <section id="tecnologia" className="parxis-glass relative py-28 lg:py-36">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         <div className="text-center mb-20">
-          <p className="text-[10px] uppercase tracking-[0.42em] text-[color:var(--gold)] mb-6">
-            {tr(c.eyebrow, lang)}
-          </p>
+          <p className="text-[10px] uppercase tracking-[0.42em] text-[color:var(--gold)] mb-6">{tr(c.eyebrow, lang)}</p>
           <h2 className="font-serif text-4xl md:text-5xl leading-tight max-w-3xl mx-auto">
-            {tr(c.titlePre, lang)}<em className="parxis-gold-text not-italic">{tr(c.titleGold, lang)}</em>{tr(c.titlePost, lang)}
+            {tr(c.titlePre, lang)}
+            <em className="parxis-gold-text not-italic">{tr(c.titleGold, lang)}</em>
+            {tr(c.titlePost, lang)}
           </h2>
           <div className="parxis-gold-rule w-32 mx-auto mt-8" />
         </div>
@@ -507,7 +576,9 @@ function ForClinics() {
         <div className="max-w-3xl mb-20">
           <p className="text-[10px] uppercase tracking-[0.42em] text-[color:var(--gold)] mb-6">{tr(c.eyebrow, lang)}</p>
           <h2 className="font-serif text-4xl md:text-5xl leading-tight">
-            {tr(c.titlePre, lang)}<em className="parxis-gold-text not-italic">{tr(c.titleGold, lang)}</em>{tr(c.titlePost, lang)}
+            {tr(c.titlePre, lang)}
+            <em className="parxis-gold-text not-italic">{tr(c.titleGold, lang)}</em>
+            {tr(c.titlePost, lang)}
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground font-light leading-relaxed max-w-2xl">
             {tr(c.lead, lang)}
@@ -526,11 +597,15 @@ function ForClinics() {
         <div className="mt-16 parxis-card rounded-lg p-10 md:p-12 flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1">
             <h4 className="font-serif text-2xl md:text-3xl mb-3">{tr(c.smallByChoice.title, lang)}</h4>
-            <p className="text-sm md:text-base text-muted-foreground font-light leading-relaxed">{tr(c.smallByChoice.body, lang)}</p>
+            <p className="text-sm md:text-base text-muted-foreground font-light leading-relaxed">
+              {tr(c.smallByChoice.body, lang)}
+            </p>
           </div>
           <div className="shrink-0 text-center md:text-right">
             <div className="font-serif text-5xl text-[color:var(--gold)]">{tr(c.smallByChoice.count, lang)}</div>
-            <div className="text-[10px] uppercase tracking-[0.32em] text-muted-foreground mt-1">{tr(c.smallByChoice.unit, lang)}</div>
+            <div className="text-[10px] uppercase tracking-[0.32em] text-muted-foreground mt-1">
+              {tr(c.smallByChoice.unit, lang)}
+            </div>
           </div>
         </div>
       </div>
@@ -576,11 +651,15 @@ function VideoTestimonials() {
     const onScroll = () => {
       const cards = Array.from(el.children) as HTMLElement[];
       const center = el.scrollLeft + el.clientWidth / 2;
-      let best = 0, bestDist = Infinity;
+      let best = 0,
+        bestDist = Infinity;
       cards.forEach((cd, i) => {
         const cc = cd.offsetLeft + cd.clientWidth / 2 - el.offsetLeft;
         const d = Math.abs(cc - center);
-        if (d < bestDist) { bestDist = d; best = i; }
+        if (d < bestDist) {
+          bestDist = d;
+          best = i;
+        }
       });
       setActive(best);
     };
@@ -595,22 +674,32 @@ function VideoTestimonials() {
         <div className="text-center mb-14">
           <p className="text-[10px] uppercase tracking-[0.42em] text-[color:var(--gold)] mb-6">{tr(c.eyebrow, lang)}</p>
           <h2 className="font-serif text-3xl md:text-5xl leading-tight">
-            {tr(c.titlePre, lang)}<em className="parxis-gold-text not-italic">{tr(c.titleGold, lang)}</em>{tr(c.titlePost, lang)}
+            {tr(c.titlePre, lang)}
+            <em className="parxis-gold-text not-italic">{tr(c.titleGold, lang)}</em>
+            {tr(c.titlePost, lang)}
           </h2>
           <div className="parxis-gold-rule w-32 mx-auto mt-8" />
         </div>
         <div ref={trackRef} className="parxis-video-track">
           {c.items.map((v, i) => (
             <article key={v.id} className={`parxis-video-card ${i === active ? "is-active" : ""}`}>
-              <button type="button" className="parxis-video-play" aria-label={`${tr(c.playAria, lang)} ${tr(v.title, lang)}`}>
+              <button
+                type="button"
+                className="parxis-video-play"
+                aria-label={`${tr(c.playAria, lang)} ${tr(v.title, lang)}`}
+              >
                 <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden>
                   <path d="M8 5v14l11-7z" fill="currentColor" />
                 </svg>
               </button>
               <div className="parxis-video-meta">
                 <div className="font-serif text-xl text-[color:var(--gold)]">{tr(v.title, lang)}</div>
-                <div className="text-[10px] uppercase tracking-[0.32em] text-muted-foreground mt-2">{tr(v.role, lang)}</div>
-                <p className="mt-4 text-sm text-foreground/80 leading-relaxed italic font-light">"{tr(v.quote, lang)}"</p>
+                <div className="text-[10px] uppercase tracking-[0.32em] text-muted-foreground mt-2">
+                  {tr(v.role, lang)}
+                </div>
+                <p className="mt-4 text-sm text-foreground/80 leading-relaxed italic font-light">
+                  "{tr(v.quote, lang)}"
+                </p>
               </div>
             </article>
           ))}
@@ -642,14 +731,21 @@ function Ecosystem() {
           <GoldCorners inset={14} size={22} thickness={1.5} />
           <p className="text-[10px] uppercase tracking-[0.42em] text-[color:var(--gold)] mb-6">{tr(c.eyebrow, lang)}</p>
           <h2 className="font-serif text-3xl md:text-4xl leading-tight">
-            {tr(c.titlePre, lang)}<em className="parxis-gold-text not-italic">{tr(c.titleGold, lang)}</em>{tr(c.titlePost, lang)}
+            {tr(c.titlePre, lang)}
+            <em className="parxis-gold-text not-italic">{tr(c.titleGold, lang)}</em>
+            {tr(c.titlePost, lang)}
           </h2>
           <div className="parxis-gold-rule w-24 mx-auto my-8" />
           <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed max-w-2xl mx-auto">
             {tr(c.body, lang)}
           </p>
           <div className="mt-10">
-            <a href="https://padcon.com.br" target="_blank" rel="noopener noreferrer" className="parxis-btn parxis-btn-ghost">
+            <a
+              href="https://padcon.replit.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="parxis-btn parxis-btn-ghost"
+            >
               <span className="parxis-btn-inner">
                 {tr(c.cta, lang)}
                 <span aria-hidden>→</span>
@@ -708,15 +804,22 @@ function Scarcity() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
             <div className="text-center">
               <div className="font-serif text-6xl md:text-7xl text-[color:var(--gold)]">{tr(c.seats, lang)}</div>
-              <div className="text-[10px] uppercase tracking-[0.32em] text-muted-foreground mt-2">{tr(c.seatsLabel, lang)}</div>
+              <div className="text-[10px] uppercase tracking-[0.32em] text-muted-foreground mt-2">
+                {tr(c.seatsLabel, lang)}
+              </div>
             </div>
             <div className="hidden md:block w-px h-20 bg-[rgba(242,184,23,0.25)]" />
             <div>
-              <div className="text-xs uppercase tracking-[0.32em] text-muted-foreground mb-4">{tr(c.closingLabel, lang)}</div>
+              <div className="text-xs uppercase tracking-[0.32em] text-muted-foreground mb-4">
+                {tr(c.closingLabel, lang)}
+              </div>
               {mounted ? (
                 <div className="grid grid-cols-4 gap-3">
                   {slots.map((s) => (
-                    <div key={s.label} className="min-w-[64px] px-3 py-4 rounded-lg bg-[rgba(242,184,23,0.08)] border border-[rgba(242,184,23,0.2)]">
+                    <div
+                      key={s.label}
+                      className="min-w-[64px] px-3 py-4 rounded-lg bg-[rgba(242,184,23,0.08)] border border-[rgba(242,184,23,0.2)]"
+                    >
                       <div className="font-serif text-2xl md:text-3xl text-[color:var(--gold)]">
                         {String(s.value).padStart(2, "0")}
                       </div>
@@ -725,7 +828,9 @@ function Scarcity() {
                   ))}
                 </div>
               ) : (
-                <div className="h-[88px] flex items-center justify-center text-muted-foreground text-sm">{tr(c.calculating, lang)}</div>
+                <div className="h-[88px] flex items-center justify-center text-muted-foreground text-sm">
+                  {tr(c.calculating, lang)}
+                </div>
               )}
             </div>
           </div>
@@ -737,7 +842,9 @@ function Scarcity() {
             <a href="#contato" className="parxis-btn parxis-btn-primary group">
               <span className="parxis-btn-inner">
                 {tr(c.cta, lang)}
-                <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+                <span aria-hidden className="transition-transform group-hover:translate-x-1">
+                  →
+                </span>
               </span>
             </a>
           </div>
@@ -796,8 +903,9 @@ function CTA() {
     }
 
     setLoading(true);
-    const API_BASE = (import.meta.env.VITE_API_BASE_URL as string | undefined)?.replace(/\/+$/, "")
-      || "https://workspaceapi-server-production-f5ec.up.railway.app";
+    const API_BASE =
+      (import.meta.env.VITE_API_BASE_URL as string | undefined)?.replace(/\/+$/, "") ||
+      "https://workspaceapi-server-production-f5ec.up.railway.app";
     const [supabaseResult] = await Promise.allSettled([
       supabase.from("leads").insert(payload),
       fetch(`${API_BASE}/api/vitrine-contatos`, {
@@ -826,16 +934,18 @@ function CTA() {
   return (
     <section id="contato" className="parxis-glass relative py-32 lg:py-40 border-y border-[rgba(242,184,23,0.15)]">
       <div className="mx-auto max-w-3xl px-6 lg:px-10 relative">
-       <div className="text-center">
-        <p className="text-[10px] uppercase tracking-[0.42em] text-[color:var(--gold)] mb-8">{tr(c.eyebrow, lang)}</p>
-        <h2 className="font-serif text-4xl md:text-6xl leading-tight">
-          {tr(c.titlePre, lang)}<em className="parxis-gold-text not-italic">{tr(c.titleGold, lang)}</em>{tr(c.titlePost, lang)}
-        </h2>
-        <div className="parxis-gold-rule w-40 mx-auto my-10" />
-        <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed max-w-xl mx-auto">
-          {tr(c.lead, lang)}
-        </p>
-       </div>
+        <div className="text-center">
+          <p className="text-[10px] uppercase tracking-[0.42em] text-[color:var(--gold)] mb-8">{tr(c.eyebrow, lang)}</p>
+          <h2 className="font-serif text-4xl md:text-6xl leading-tight">
+            {tr(c.titlePre, lang)}
+            <em className="parxis-gold-text not-italic">{tr(c.titleGold, lang)}</em>
+            {tr(c.titlePost, lang)}
+          </h2>
+          <div className="parxis-gold-rule w-40 mx-auto my-10" />
+          <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed max-w-xl mx-auto">
+            {tr(c.lead, lang)}
+          </p>
+        </div>
 
         {submitted ? (
           <div className="mt-14 parxis-card rounded-lg p-10 text-center">
@@ -849,10 +959,34 @@ function CTA() {
           <form onSubmit={handleSubmit} className="mt-14 parxis-card rounded-lg p-8 md:p-10 text-left relative">
             <GoldCorners inset={10} size={18} thickness={1.5} />
             <div className="grid md:grid-cols-2 gap-5">
-              <LeadField label={tr(c.fields.name, lang)} name="nome" required autoComplete="name" placeholder={tr(c.fields.namePh, lang)} />
-              <LeadField label={tr(c.fields.email, lang)} name="email" type="email" required autoComplete="email" placeholder={tr(c.fields.emailPh, lang)} />
-              <LeadField label={tr(c.fields.phone, lang)} name="telefone" type="tel" autoComplete="tel" placeholder={tr(c.fields.phonePh, lang)} />
-              <LeadField label={tr(c.fields.clinic, lang)} name="clinica" required placeholder={tr(c.fields.clinicPh, lang)} />
+              <LeadField
+                label={tr(c.fields.name, lang)}
+                name="nome"
+                required
+                autoComplete="name"
+                placeholder={tr(c.fields.namePh, lang)}
+              />
+              <LeadField
+                label={tr(c.fields.email, lang)}
+                name="email"
+                type="email"
+                required
+                autoComplete="email"
+                placeholder={tr(c.fields.emailPh, lang)}
+              />
+              <LeadField
+                label={tr(c.fields.phone, lang)}
+                name="telefone"
+                type="tel"
+                autoComplete="tel"
+                placeholder={tr(c.fields.phonePh, lang)}
+              />
+              <LeadField
+                label={tr(c.fields.clinic, lang)}
+                name="clinica"
+                required
+                placeholder={tr(c.fields.clinicPh, lang)}
+              />
               <div className="md:col-span-1">
                 <label className="block text-[10px] uppercase tracking-[0.32em] text-[color:var(--gold)] mb-2">
                   {tr(c.fields.specialty, lang)}
@@ -863,9 +997,13 @@ function CTA() {
                   defaultValue=""
                   className="w-full bg-transparent border border-[rgba(242,184,23,0.35)] rounded-md px-4 py-3 text-sm text-foreground focus:outline-none focus:border-[color:var(--gold)] transition-colors"
                 >
-                  <option value="" disabled className="bg-[#120505]">{tr(c.fields.selectPh, lang)}</option>
+                  <option value="" disabled className="bg-[#120505]">
+                    {tr(c.fields.selectPh, lang)}
+                  </option>
                   {c.specialties.map((opt, i) => (
-                    <option key={i} value={tr(opt, lang)} className="bg-[#120505]">{tr(opt, lang)}</option>
+                    <option key={i} value={tr(opt, lang)} className="bg-[#120505]">
+                      {tr(opt, lang)}
+                    </option>
                   ))}
                 </select>
               </div>
@@ -878,9 +1016,13 @@ function CTA() {
                   defaultValue=""
                   className="w-full bg-transparent border border-[rgba(242,184,23,0.35)] rounded-md px-4 py-3 text-sm text-foreground focus:outline-none focus:border-[color:var(--gold)] transition-colors"
                 >
-                  <option value="" className="bg-[#120505]">{tr(c.fields.selectOptional, lang)}</option>
+                  <option value="" className="bg-[#120505]">
+                    {tr(c.fields.selectOptional, lang)}
+                  </option>
                   {c.volumes.map((opt, i) => (
-                    <option key={i} value={tr(opt, lang)} className="bg-[#120505]">{tr(opt, lang)}</option>
+                    <option key={i} value={tr(opt, lang)} className="bg-[#120505]">
+                      {tr(opt, lang)}
+                    </option>
                   ))}
                 </select>
               </div>
@@ -917,9 +1059,7 @@ function CTA() {
           </form>
         )}
 
-        <p className="mt-6 text-[10px] uppercase tracking-[0.32em] text-muted-foreground">
-          {tr(c.afterHint, lang)}
-        </p>
+        <p className="mt-6 text-[10px] uppercase tracking-[0.32em] text-muted-foreground">{tr(c.afterHint, lang)}</p>
 
         <div className="mt-10 parxis-card rounded-lg p-8 md:p-10 text-left">
           <h3 className="font-serif text-xl mb-5">{tr(c.terms.title, lang)}</h3>
@@ -927,7 +1067,9 @@ function CTA() {
           <ul className="space-y-3 text-xs md:text-sm text-muted-foreground font-light leading-relaxed mb-6">
             {c.terms.items.map((it, i) => (
               <li key={i} className="flex gap-3">
-                <span aria-hidden className="text-[color:var(--gold)] mt-0.5">✦</span>
+                <span aria-hidden className="text-[color:var(--gold)] mt-0.5">
+                  ✦
+                </span>
                 <span>{tr(it, lang)}</span>
               </li>
             ))}
@@ -940,7 +1082,8 @@ function CTA() {
               className="mt-1 h-4 w-4 accent-[color:var(--gold)] rounded border border-[rgba(242,184,23,0.45)] bg-transparent cursor-pointer"
             />
             <span className="text-xs text-muted-foreground font-light leading-relaxed">
-              {tr(c.terms.consent, lang)}<span className="text-[color:var(--gold)]">{tr(c.terms.email, lang)}</span>.
+              {tr(c.terms.consent, lang)}
+              <span className="text-[color:var(--gold)]">{tr(c.terms.email, lang)}</span>.
             </span>
           </label>
         </div>
@@ -950,15 +1093,25 @@ function CTA() {
 }
 
 function LeadField({
-  label, name, type = "text", required, placeholder, autoComplete,
+  label,
+  name,
+  type = "text",
+  required,
+  placeholder,
+  autoComplete,
 }: {
-  label: string; name: string; type?: string; required?: boolean;
-  placeholder?: string; autoComplete?: string;
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+  placeholder?: string;
+  autoComplete?: string;
 }) {
   return (
     <div>
       <label className="block text-[10px] uppercase tracking-[0.32em] text-[color:var(--gold)] mb-2">
-        {label}{required && <span className="text-[color:var(--gold)]/60"> ·</span>}
+        {label}
+        {required && <span className="text-[color:var(--gold)]/60"> ·</span>}
       </label>
       <input
         type={type}
@@ -1039,9 +1192,7 @@ function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8 py-12">
           {columnData.map((col, i) => (
             <div key={i} className="min-w-0">
-              <div className="text-[10px] uppercase tracking-[0.34em] parxis-gold-text mb-4">
-                {tr(col.title, lang)}
-              </div>
+              <div className="text-[10px] uppercase tracking-[0.34em] parxis-gold-text mb-4">{tr(col.title, lang)}</div>
               <ul className="space-y-2.5 text-[11px] leading-relaxed text-muted-foreground/90 font-light tracking-wide">
                 {col.lines.map((line, j) => (
                   <li key={j}>{tr(line, lang)}</li>
