@@ -1,3 +1,4 @@
+import paxmedWordmarkArt from "@/assets/paxmed_wordmark.png.asset.json";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link as RLink } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
@@ -403,7 +404,7 @@ function ParxisMonogram() {
           <div className="parxis-surface" aria-hidden />
         </div>
       </div>
-      <div className="parxis-wordmark paxmed-wordmark-text" role="img" aria-label="PAXMED">PAXMED</div>
+      <div className="parxis-wordmark paxmed-wordmark-art" role="img" aria-label="PAXMED" style={{ backgroundImage: `url(${paxmedWordmarkArt.url})` }} />
     </div>
   );
 }

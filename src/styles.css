@@ -2246,3 +2246,14 @@ html[data-motion="reduce"] .parxis-corner-pulse {
 @media (max-width: 767px) {
   .parxis-wordmark.paxmed-wordmark-text { font-size: clamp(28px, 9vw, 40px); }
 }
+
+/* Wordmark PAXMED — arte original (PAXMED_3.png) recortada em transparência; posição herdada de .parxis-wordmark */
+.parxis-wordmark.paxmed-wordmark-art,
+html[data-contrast="high"] .parxis-wordmark.paxmed-wordmark-art {
+  aspect-ratio: 1830 / 316;
+  width: clamp(300px, 33vw, 440px);
+  filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.7)) !important;
+}
+@media (max-width: 767px) {
+  .parxis-wordmark.paxmed-wordmark-art { width: min(76vw, 320px); }
+}
