@@ -26,16 +26,15 @@ import {
   formatRemaining,
 } from "@/lib/login-lockout";
 import { getFlags } from "@/lib/feature-flags";
-import parxisWordmark from "@/assets/parxis-wordmark.png";
 import atelierAsset from "@/assets/parxis-atelier-v15-camelo-4k.webp.asset.json";
 import atelierMobileAsset from "@/assets/parxis-atelier-v15-camelo-mobile.webp.asset.json";
 const atelierUrl = atelierAsset.url;
 const atelierMobileUrl = atelierMobileAsset.url;
 import padconLogoAsset from "@/assets/padcon-logo-cropped.png.asset.json";
-import { PaxterMedalhao } from "@/components/PaxterMedalhao";
+import { PaxMedMonogram } from "@/components/PaxMedMonogram";
 
 // ------------------------------------------------------------------
-// Backend Padaxor (api-server) — autenticação de colaboradores.
+// Backend Pax Med (api-server) — autenticação de colaboradores.
 // Sobrescreve o VITE_API_URL quando o domínio próprio entrar no ar.
 // ------------------------------------------------------------------
 // Unificado em VITE_API_BASE_URL (mesma variável usada pelo portão da vitrine).
@@ -43,7 +42,11 @@ import { PaxterMedalhao } from "@/components/PaxterMedalhao";
 const API_URL =
   (import.meta.env.VITE_API_BASE_URL as string | undefined)?.replace(/\/+$/, "") ||
   (import.meta.env.VITE_API_URL as string | undefined)?.replace(/\/+$/, "") ||
-  "https://workspaceapi-server-production-f5ec.up.railway.app";
+  "";
+/** Sem VITE_API_BASE_URL definida, a tela opera em modo demonstração (nenhuma chamada de rede). */
+const API_CONFIGURED = API_URL.length > 0;
+
+type Perfil = "medico" | "paciente";
 
 type Professional = StoredProfessional;
 
@@ -163,40 +166,42 @@ function redirectByRole(role: string) {
 export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
-      { title: "Padaxor · Acesso Clínico Reservado" },
+      { title: "Pax Med · Acesso Clínico Reservado" },
       {
         name: "description",
         content:
-          "Entrada privada ao motor clínico Padaxor. Acesso reservado a médicos licenciados — autenticação com verificação forte e Sign in with Google.",
+          "Entrada privada ao motor clínico Pax Med. Acesso para médicos, clínicas e pacientes, com autenticação segura.",
       },
-      { property: "og:title", content: "Padaxor · Acesso Clínico Reservado" },
+      { property: "og:title", content: "Pax Med · Acesso Clínico Reservado" },
       {
         property: "og:description",
-        content: "Entrada privada dos médicos licenciados no Padaxor.",
+        content: "Entrada privada dos médicos licenciados no Pax Med.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),
+  validateSearch: (search: Record<string, unknown>): { perfil?: Perfil } =>
+    search.perfil === "paciente" || search.perfil === "medico" ? { perfil: search.perfil } : {},
   component: LoginPage,
 });
 
 const COPY = {
   eyebrow: { pt: "Acesso reservado", en: "Reserved access" },
-  brand: { pt: "Círculo Padaxor", en: "Padaxor Circle" },
+  brand: { pt: "PAX MED", en: "PAX MED" },
   headline: {
     pt: "Entre no motor clínico.",
     en: "Enter the clinical engine.",
   },
   lead: {
-    pt: "Autenticação privada dos médicos licenciados. Verificação em dupla camada, senhas cruzadas contra vazamentos globais e Sign in with Google com credenciais de mais alto nível.",
-    en: "Private authentication for licensed physicians. Two-layer verification, passwords cross-checked against global breach corpora, and Sign in with Google at the highest available assurance.",
+    pt: "Acesso privado para médicos, clínicas e pacientes. Conexão criptografada, contas criadas pelo administrador e proteção contra tentativas repetidas.",
+    en: "Private access for physicians, clinics and patients. Encrypted connection, administrator-created accounts and protection against repeated attempts.",
   },
   tabIn: { pt: "Entrar", en: "Sign in" },
-  email: { pt: "Email institucional", en: "Institutional email" },
+  email: { pt: "E-mail ou CPF", en: "Email or CPF" },
   password: { pt: "Senha", en: "Password" },
-  submitIn: { pt: "Acessar Padaxor", en: "Enter Padaxor" },
+  submitIn: { pt: "Acessar Pax Med", en: "Enter Pax Med" },
   forgot: { pt: "Esqueci minha senha", en: "I forgot my password" },
   loading: { pt: "Aguarde…", en: "Please wait…" },
   success: {
@@ -238,8 +243,8 @@ const COPY = {
     en: "Credentials not recognized",
   },
   invalidCredentialsReason: {
-    pt: "O usuário ou a senha não conferem. Confira maiúsculas, minúsculas e o layout do teclado e tente novamente. Se o problema persistir, fale com o administrador do seu Círculo — as contas Padaxor são criadas por indicação.",
-    en: "The username or password does not match. Check letter case and keyboard layout, then try again. If it persists, contact your Circle administrator — Padaxor accounts are created by invitation.",
+    pt: "O usuário ou a senha não conferem. Confira maiúsculas, minúsculas e o layout do teclado e tente novamente. Se o problema persistir, fale com o administrador do seu Círculo — as contas Pax Med são criadas por indicação.",
+    en: "The username or password does not match. Check letter case and keyboard layout, then try again. If it persists, contact your Circle administrator — Pax Med accounts are created by invitation.",
   },
   invalidCredentialsRetry: {
     pt: "Tentar novamente",
@@ -269,8 +274,8 @@ const CERTS: Cert[] = [
       en: "Highest-assurance delegated authentication — no password in transit.",
     },
     detail: {
-      pt: "O acesso pode ser feito pelo protocolo OAuth 2.1 com Sign in with Google, o padrão de mais alto nível disponível hoje. A Parxis nunca recebe sua senha do Google — apenas um token efêmero, assinado, com escopo mínimo e rotação automática. PKCE obrigatório em todos os fluxos.",
-      en: "Access is delegated via OAuth 2.1 with Sign in with Google — today's highest-assurance standard. Parxis never receives your Google password, only a signed ephemeral token with minimum scope and automatic rotation. PKCE is enforced on every flow.",
+      pt: "O acesso pode ser feito pelo protocolo OAuth 2.1 com Sign in with Google, o padrão de mais alto nível disponível hoje. A Pax Med nunca recebe sua senha do Google — apenas um token efêmero, assinado, com escopo mínimo e rotação automática. PKCE obrigatório em todos os fluxos.",
+      en: "Access is delegated via OAuth 2.1 with Sign in with Google — today's highest-assurance standard. Pax Med never receives your Google password, only a signed ephemeral token with minimum scope and automatic rotation. PKCE is enforced on every flow.",
     },
   },
   {
@@ -282,8 +287,8 @@ const CERTS: Cert[] = [
       en: "Passwords cross-checked against billions of leaked credentials worldwide.",
     },
     detail: {
-      pt: "Toda senha cadastrada é conferida contra o corpus HIBP (Have I Been Pwned) — um banco mundial de bilhões de credenciais expostas em vazamentos. Se sua senha aparecer em qualquer incidente conhecido, a Parxis bloqueia o cadastro antes que o risco chegue à sua clínica. A verificação é feita com hashing parcial (k-anonymity): sua senha nunca sai do dispositivo em texto claro.",
-      en: "Every submitted password is checked against the HIBP (Have I Been Pwned) corpus — a global database of billions of credentials exposed in breaches. If your password appears in any known incident, Parxis blocks the registration before the risk touches your clinic. The check uses k-anonymity partial hashing: your password never leaves your device in clear text.",
+      pt: "Toda senha cadastrada é conferida contra o corpus HIBP (Have I Been Pwned) — um banco mundial de bilhões de credenciais expostas em vazamentos. Se sua senha aparecer em qualquer incidente conhecido, a Pax Med bloqueia o cadastro antes que o risco chegue à sua clínica. A verificação é feita com hashing parcial (k-anonymity): sua senha nunca sai do dispositivo em texto claro.",
+      en: "Every submitted password is checked against the HIBP (Have I Been Pwned) corpus — a global database of billions of credentials exposed in breaches. If your password appears in any known incident, Pax Med blocks the registration before the risk touches your clinic. The check uses k-anonymity partial hashing: your password never leaves your device in clear text.",
     },
   },
   {
@@ -295,8 +300,8 @@ const CERTS: Cert[] = [
       en: "All traffic travels in a modern end-to-end encrypted channel.",
     },
     detail: {
-      pt: "Todo o tráfego entre o seu navegador e o motor clínico Parxis viaja sobre TLS 1.3 — a geração mais atual do protocolo, com handshake reduzido, forward secrecy obrigatório e ciphers legados desativados. Isso impede que redes intermediárias, provedores ou terceiros consigam ler ou alterar as requisições em trânsito.",
-      en: "All traffic between your browser and the Parxis clinical engine flows over TLS 1.3 — the most current generation of the protocol, with reduced handshake, mandatory forward secrecy and legacy ciphers disabled. This prevents intermediary networks, providers or third parties from reading or tampering with requests in transit.",
+      pt: "Todo o tráfego entre o seu navegador e o motor clínico Pax Med viaja sobre TLS 1.3 — a geração mais atual do protocolo, com handshake reduzido, forward secrecy obrigatório e ciphers legados desativados. Isso impede que redes intermediárias, provedores ou terceiros consigam ler ou alterar as requisições em trânsito.",
+      en: "All traffic between your browser and the Pax Med clinical engine flows over TLS 1.3 — the most current generation of the protocol, with reduced handshake, mandatory forward secrecy and legacy ciphers disabled. This prevents intermediary networks, providers or third parties from reading or tampering with requests in transit.",
     },
   },
   {
@@ -308,8 +313,8 @@ const CERTS: Cert[] = [
       en: "Clinical data isolated at the row level — each clinic sees only its own.",
     },
     detail: {
-      pt: "A Parxis opera em conformidade com a LGPD e usa Row-Level Security (RLS) no banco de dados: cada registro clínico carrega o vínculo da clínica proprietária, e o motor bloqueia no núcleo qualquer leitura fora desse escopo. Nenhum médico, operador ou administrador cruza dados de clínicas diferentes — o isolamento é técnico, não apenas contratual.",
-      en: "Parxis is LGPD-compliant and uses Row-Level Security (RLS) at the database layer: every clinical record carries its owning clinic, and the engine blocks any read outside that scope at the core. No physician, operator or administrator can cross data between clinics — the isolation is technical, not merely contractual.",
+      pt: "A Pax Med opera em conformidade com a LGPD e usa Row-Level Security (RLS) no banco de dados: cada registro clínico carrega o vínculo da clínica proprietária, e o motor bloqueia no núcleo qualquer leitura fora desse escopo. Nenhum médico, operador ou administrador cruza dados de clínicas diferentes — o isolamento é técnico, não apenas contratual.",
+      en: "Pax Med is LGPD-compliant and uses Row-Level Security (RLS) at the database layer: every clinical record carries its owning clinic, and the engine blocks any read outside that scope at the core. No physician, operator or administrator can cross data between clinics — the isolation is technical, not merely contractual.",
     },
   },
 ];
@@ -328,6 +333,9 @@ const APP_URL = "https://workspacepadcom-production.up.railway.app";
 function LoginPage() {
   const { lang } = useLang();
   const navigate = useNavigate();
+  const { perfil: perfilParam } = Route.useSearch();
+  const perfil: Perfil = perfilParam ?? "medico";
+  const setPerfil = (p: Perfil) => navigate({ to: "/login", search: { perfil: p }, replace: true });
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPw, setShowPw] = useState(false);
@@ -379,7 +387,7 @@ function LoginPage() {
       /* noop */
     }
 
-    // 1) Sessão do api-server (token Padaxor) — prioridade.
+    // 1) Sessão do api-server (token Pax Med) — prioridade.
     const token = readStoredToken();
     if (token) {
       // Se o JWT já expirou localmente, não tenta usá-lo: limpa e mostra login.
@@ -439,7 +447,37 @@ function LoginPage() {
     if (loading) return;
     // Backend próprio aceita username livre (não exige e-mail).
     if (email.trim().length === 0) {
-      toast.error(lang === "pt" ? "Informe o usuário." : "Enter your username.");
+      toast.error(lang === "pt" ? "Informe o e-mail ou CPF." : "Enter your email or CPF.");
+      return;
+    }
+    if (!API_CONFIGURED) {
+      toast.info(lang === "pt" ? "Modo demonstração" : "Demo mode", {
+        description:
+          lang === "pt"
+            ? "A conexão com o sistema ainda não foi configurada. Nenhum dado foi enviado."
+            : "The system connection is not configured yet. No data was sent.",
+      });
+      return;
+    }
+    if (perfil === "paciente") {
+      setLoading(true);
+      try {
+        const res = await fetch(`${API_URL}/api/patient/login`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ identifier: email.trim(), password }),
+        });
+        if (!res.ok) throw new Error(String(res.status));
+        toast.success(lang === "pt" ? "Bem-vindo ao Portal do Paciente." : "Welcome to the Patient Portal.");
+      } catch {
+        toast.error(
+          lang === "pt"
+            ? "Não foi possível entrar no Portal do Paciente. Confira seus dados ou tente mais tarde."
+            : "Could not sign in to the Patient Portal. Check your details or try later.",
+        );
+      } finally {
+        setLoading(false);
+      }
       return;
     }
     // Lockout local — barra ANTES da rede quando o usuário local já
@@ -564,12 +602,8 @@ function LoginPage() {
 
       <header className="relative z-20 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 sm:px-6 md:px-10 py-5 sm:py-6">
         <Link to="/" className="flex min-w-0 items-center gap-2 sm:gap-3 group">
-          <PaxterMedalhao size={44} className="shrink-0" />
-          <img
-            src={parxisWordmark}
-            alt="Parxis"
-            className="h-6 sm:h-7 md:h-8 w-auto opacity-95 group-hover:opacity-100 transition-opacity"
-          />
+          <PaxMedMonogram size={44} />
+          <span className="font-serif text-[22px] sm:text-[26px] font-semibold tracking-[0.18em] sm:tracking-[0.22em] parxis-gold-text whitespace-nowrap">PAX MED</span>
         </Link>
         <div className="flex items-center gap-3">
           {storedSession && (
@@ -632,7 +666,7 @@ function LoginPage() {
             </p>
 
             <ul className="mt-10 space-y-4 text-[15px] text-foreground/90">
-              <TrustRow label={lang === "pt" ? "OAuth 2.1 · Sign in with Google" : "OAuth 2.1 · Sign in with Google"} />
+              <TrustRow label={lang === "pt" ? "Contas criadas pelo administrador · sem cadastro público" : "Accounts created by the administrator · no public sign-up"} />
               <TrustRow label={lang === "pt" ? "Senhas verificadas contra HIBP (bilhões de vazamentos)" : "Passwords screened against HIBP (billions of breaches)"} />
               <TrustRow label={lang === "pt" ? "TLS 1.3 · sessões efêmeras · rotação automática" : "TLS 1.3 · ephemeral sessions · auto-rotation"} />
               <TrustRow label={lang === "pt" ? "Conformidade LGPD · dados clínicos isolados por RLS" : "LGPD-compliant · clinical data isolated by row-level security"} />
@@ -651,6 +685,34 @@ function LoginPage() {
             </h2>
             <div className="parxis-gold-rule w-16 mx-auto my-5" />
 
+            <div role="tablist" aria-label={lang === "pt" ? "Tipo de acesso" : "Access type"} className="grid grid-cols-2 gap-2 mb-6">
+              {([
+                ["medico", lang === "pt" ? "Sou Médico ou Clínica" : "I'm a Physician or Clinic"],
+                ["paciente", lang === "pt" ? "Sou Paciente" : "I'm a Patient"],
+              ] as const).map(([key, label]) => (
+                <button
+                  key={key}
+                  type="button"
+                  role="tab"
+                  aria-selected={perfil === key}
+                  onClick={() => setPerfil(key)}
+                  className={cn(
+                    "rounded-lg border px-3 py-3 text-[12px] sm:text-[13px] leading-snug transition-colors",
+                    perfil === key
+                      ? "border-[color:var(--gold)] bg-[rgba(242,184,23,0.12)] text-[color:var(--gold)]"
+                      : "border-[rgba(242,184,23,0.22)] text-muted-foreground hover:text-foreground",
+                  )}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+            {!API_CONFIGURED && (
+              <p className="mb-4 text-center text-[12px] text-muted-foreground">
+                {lang === "pt" ? "Modo demonstração — conexão com o sistema ainda não configurada." : "Demo mode — system connection not configured."}
+              </p>
+            )}
+
             <form onSubmit={onSubmit} className="space-y-4" noValidate>
               <label className="block">
                 <span className="block text-[11px] uppercase tracking-[0.32em] text-[color:var(--gold)] mb-2">
@@ -664,7 +726,7 @@ function LoginPage() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="voce@clinica.com.br"
+                    placeholder={perfil === "paciente" ? "seu@email.com ou CPF" : "voce@clinica.com.br"}
                   />
                 </div>
               </label>
@@ -710,7 +772,11 @@ function LoginPage() {
                 className="parxis-btn parxis-btn-primary w-full mt-2"
               >
                 <span>
-                  {loading ? tr(COPY.loading, lang) : tr(COPY.submitIn, lang)}
+                  {loading
+                    ? tr(COPY.loading, lang)
+                    : perfil === "paciente"
+                      ? lang === "pt" ? "Entrar no Portal do Paciente" : "Enter Patient Portal"
+                      : tr(COPY.submitIn, lang)}
                 </span>
               </button>
             </form>

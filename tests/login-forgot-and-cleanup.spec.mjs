@@ -137,11 +137,11 @@ async function testCleanUI(context) {
   const type = await page.locator("form input").nth(0).getAttribute("type");
   record('cleanup: input de usuário type="text"', type === "text", type ?? "<null>");
 
-  // Botão submit fixo em "Acessar Padaxor" / "Enter Padaxor".
+  // Botão submit fixo em "Acessar Pax Med" / "Enter Pax Med".
   const submit = await page
-    .getByRole("button", { name: /Acessar Padaxor|Enter Padaxor/i })
+    .getByRole("button", { name: /Acessar Pax Med|Enter Pax Med/i })
     .count();
-  record("cleanup: submit fixo em 'Acessar Padaxor'", submit > 0);
+  record("cleanup: submit fixo em 'Acessar Pax Med'", submit > 0);
 
   await page.close();
 }

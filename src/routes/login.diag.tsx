@@ -23,8 +23,8 @@ import { getFlags } from "@/lib/feature-flags";
 export const Route = createFileRoute("/login/diag")({
   head: () => ({
     meta: [
-      { title: "Diagnóstico de Login — Padaxor" },
-      { name: "description", content: "Diagnóstico interno de autenticação Padaxor." },
+      { title: "Diagnóstico de Login — Pax Med" },
+      { name: "description", content: "Diagnóstico interno de autenticação Pax Med." },
       { name: "robots", content: "noindex,nofollow" },
     ],
   }),

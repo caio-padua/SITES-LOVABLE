@@ -1,5 +1,5 @@
 // ------------------------------------------------------------------
-// Portão de acesso da vitrine Parxis — validação e envio de leads.
+// Portão de acesso da vitrine Pax Med — validação e envio de leads.
 // Contrato: POST <VITE_API_BASE_URL>/api/vitrine-leads
 // Campos: tipo, nome, cpf, telefone (cnpj obrigatório quando clinica).
 // Resposta: { ok: true } ou { error: string }.

@@ -6,16 +6,16 @@ import { VitrineGate } from "@/components/VitrineGate";
 export const Route = createFileRoute("/demonstracao/clinica")({
   head: () => ({
     meta: [
-      { title: "Padaxor · Demonstração para Clínicas" },
+      { title: "Pax Med · Demonstração para Clínicas" },
       {
         name: "description",
         content:
-          "Demonstração privada do Padaxor para clínicas. Veja como o motor clínico opera prescrições, protocolos e documentos.",
+          "Demonstração privada do Pax Med para clínicas. Veja como o motor clínico opera prescrições, protocolos e documentos.",
       },
-      { property: "og:title", content: "Padaxor · Demonstração para Clínicas" },
+      { property: "og:title", content: "Pax Med · Demonstração para Clínicas" },
       {
         property: "og:description",
-        content: "Demonstração privada do Parxis para clínicas.",
+        content: "Demonstração privada do Pax Med para clínicas.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -38,7 +38,7 @@ function DemonstracaoClinicaPage() {
             {tr(p.body, lang)}
           </p>
           <div className="mt-10">
-            <Link to="/#contato" className="parxis-btn parxis-btn-primary group">
+            <Link to="/" hash="contato" className="parxis-btn parxis-btn-primary group">
               <span className="parxis-btn-inner">
                 {tr(p.cta, lang)}
                 <span aria-hidden className="transition-transform group-hover:translate-x-1">

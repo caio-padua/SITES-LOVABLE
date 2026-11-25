@@ -1,5 +1,5 @@
 /**
- * Toda a copy do site Parxis, em PT e EN.
+ * Toda a copy do site Pax Med, em PT e EN.
  * A versão PT é a versão canônica (assinada pelo Dr. Padcon).
  * A versão EN é uma tradução fiel, preservando a atmosfera de maison clínica.
  */
@@ -8,8 +8,8 @@ type B = { en: string; pt: string };
 
 export const content = {
   nav: {
-    brand: { en: "Padaxor", pt: "Padaxor" },
-    tagline: { en: "By Referral", pt: "Por Indicação" },
+    brand: { en: "PAX MED", pt: "PAX MED" },
+    tagline: { en: "A PADCOM company", pt: "Uma empresa PADCOM" },
     links: {
       manifesto: { en: "Manifesto", pt: "Manifesto" },
       features: { en: "Features", pt: "Recursos" },
@@ -17,7 +17,9 @@ export const content = {
       circle: { en: "The Circle", pt: "O Círculo" },
       ecosystem: { en: "Ecosystem", pt: "Ecossistema" },
     } as Record<string, B>,
-    cta: { en: "Request referral", pt: "Solicitar indicação" },
+    cta: { en: "Plans / Request a demo", pt: "Conhecer Planos / Solicitar Demonstração" },
+    doctor: { en: "Physician / Clinic Area", pt: "Área do Médico / Clínica" },
+    patient: { en: "Patient Portal", pt: "Portal do Paciente" },
     a11y: {
       motionOn: { en: "Animations on — click to reduce", pt: "Animações ativas — clique para reduzir" },
       motionOff: { en: "Reduced motion — click to activate", pt: "Animações reduzidas — clique para ativar" },
@@ -28,20 +30,20 @@ export const content = {
 
   hero: {
     eyebrow: {
-      en: "A PAWARDS MedCore® product · A PADCOM company",
-      pt: "Um produto PAWARDS MedCore® · Uma empresa PADCOM",
+      en: "PAX MED · A PADCOM company",
+      pt: "PAX MED · Uma empresa PADCOM",
     },
     titlePre: { en: "The clinical system that works", pt: "O sistema clínico que trabalha" },
     titleGold: { en: "while you care", pt: "enquanto você cuida" },
     titlePost: { en: ".", pt: "." },
     lead: {
-      en: "From the first consultation to the definitive archive — no paper, no rework, no legal risk. A clinical engine reserved to a small circle of physicians, admitted by referral only.",
-      pt: "Da primeira consulta ao arquivo definitivo — sem papel, sem retrabalho, sem risco jurídico. Um motor clínico reservado a um número restrito de médicos, admitidos apenas por indicação.",
+      en: "From the first consultation to the definitive archive — no paper, no rework, no legal risk. A high-precision clinical engine, built with exclusivity for physicians and clinics who demand excellence.",
+      pt: "Da primeira consulta ao arquivo definitivo — sem papel, sem retrabalho, sem risco jurídico. Um motor clínico de alta precisão, concebido com exclusividade para médicos e clínicas que exigem excelência.",
     },
-    ctaPrimary: { en: "Request a letter of referral", pt: "Solicitar carta de indicação" },
+    ctaPrimary: { en: "Plans / Request a demo", pt: "Conhecer Planos / Solicitar Demonstração" },
     ctaSecondary: { en: "About licensing", pt: "Sobre o licenciamento" },
     stats: [
-      { k: { en: "By", pt: "Por" }, v: { en: "referral only", pt: "indicação apenas" } },
+      { k: { en: "100%", pt: "100%" }, v: { en: "digital & signed", pt: "digital e assinado" } },
       { k: { en: "12", pt: "12" }, v: { en: "licensees per cohort", pt: "licenciados por safra" } },
       { k: { en: "1", pt: "1" }, v: { en: "physician decides", pt: "só médico decide" } },
     ] as { k: B; v: B }[],
@@ -53,8 +55,8 @@ export const content = {
     titleGold: { en: "grew tired of waiting", pt: "cansou de esperar" },
     titlePost: { en: " for someone else to build it.", pt: " que alguém construísse." },
     body: {
-      en: "PARXIS was born inside PAWARDS MedCore® — the clinical engineering arm of holding PADCOM, founded by an endocrinologist who decided to design the systems the market never delivered. It is not software adapted to medicine. It is medicine that became a system. And for that reason it cannot be replicated: it demands years of real clinical practice combined with engineering that few in the world can execute.",
-      pt: "O PARXIS nasce dentro da PAWARDS MedCore® — a engenharia clínica da holding PADCOM, fundada por um médico endocrinologista que decidiu projetar os sistemas que o mercado nunca ofereceu. Não é um software adaptado à medicina. É medicina que se tornou sistema. E por isso não se replica: exige anos de prática clínica real somados a uma engenharia que poucos, no mundo, conseguem executar.",
+      en: "PAX MED was born inside PAX MED — the clinical engineering arm of holding PADCOM, founded by an endocrinologist who decided to design the systems the market never delivered. It is not software adapted to medicine. It is medicine that became a system. And for that reason it cannot be replicated: it demands years of real clinical practice combined with engineering that few in the world can execute.",
+      pt: "O PAX MED nasce dentro da PAX MED — a engenharia clínica da holding PADCOM, fundada por um médico endocrinologista que decidiu projetar os sistemas que o mercado nunca ofereceu. Não é um software adaptado à medicina. É medicina que se tornou sistema. E por isso não se replica: exige anos de prática clínica real somados a uma engenharia que poucos, no mundo, conseguem executar.",
     },
   },
 
@@ -118,7 +120,7 @@ export const content = {
   technology: {
     eyebrow: { en: "Intelligence · Chapitre II", pt: "Inteligência · Chapitre II" },
     titlePre: { en: "The ", pt: "O motor " },
-    titleGold: { en: "PAWARDS MedCore®", pt: "PAWARDS MedCore®" },
+    titleGold: { en: "PAX MED", pt: "PAX MED" },
     titlePost: { en: " engine — working while you consult.", pt: " — que trabalha enquanto você atende." },
     items: [
       {
@@ -162,40 +164,40 @@ export const content = {
     titleGold: { en: "one maison", pt: "só maison" },
     titlePost: { en: " — and a limited number of seats.", pt: " — e um número limitado de assentos." },
     lead: {
-      en: "PARXIS is not sold in bulk. It is granted, under license, to a small cohort of physicians at a time. You do not choose to enter — you are invited. And once admitted, you acquire the rare right to decide who else will have access.",
-      pt: "O PARXIS não é vendido em massa. É concedido, por licença, a uma pequena safra de médicos por vez. Você não escolhe entrar — é convidado. E, uma vez admitido, adquire o direito raro de decidir quem mais terá acesso.",
+      en: "PAX MED is not sold in bulk. It is granted, under license, to a small cohort of physicians at a time. You do not choose to enter — you are invited. And once admitted, you acquire the rare right to decide who else will have access.",
+      pt: "O PAX MED não é vendido em massa. É concedido, por licença, a uma pequena safra de médicos por vez. Você não escolhe entrar — é convidado. E, uma vez admitido, adquire o direito raro de decidir quem mais terá acesso.",
     },
     steps: [
       {
         title: { en: "I · The Referred", pt: "I · O Indicado" },
         lead: { en: "The door opens through someone already inside the Circle.", pt: "A porta se abre por quem já pertence ao Círculo." },
         body: {
-          en: "Parxis is not sold. It is granted. Receiving a letter of referral means that a licensed physician recognised in your clinic the same standard the maison demands: discretion, clinical excellence and the will to operate as a house, not as a consulting room. From there, your candidacy enters PAWARDS MedCore®'s private review. No queue. No sales team. Only a careful decision.",
-          pt: "O Parxis não é vendido. É concedido. Receber uma carta de indicação significa que um médico licenciado reconheceu em sua clínica o mesmo padrão que a maison exige: discrição, excelência clínica e vontade de operar como uma casa, não como um consultório. A partir daí, sua candidatura entra para análise privada da PAWARDS MedCore®. Sem fila. Sem comercial. Apenas uma decisão cuidadosa.",
+          en: "Pax Med is not sold. It is granted. Receiving a letter of referral means that a licensed physician recognised in your clinic the same standard the maison demands: discretion, clinical excellence and the will to operate as a house, not as a consulting room. From there, your candidacy enters PAX MED's private review. No queue. No sales team. Only a careful decision.",
+          pt: "O Pax Med não é vendido. É concedido. Receber uma carta de indicação significa que um médico licenciado reconheceu em sua clínica o mesmo padrão que a maison exige: discrição, excelência clínica e vontade de operar como uma casa, não como um consultório. A partir daí, sua candidatura entra para análise privada da PAX MED. Sem fila. Sem comercial. Apenas uma decisão cuidadosa.",
         },
       },
       {
         title: { en: "II · The Licensee", pt: "II · O Licenciado" },
         lead: { en: "Admitted, you receive a protected territory.", pt: "Admitido, você recebe um território protegido." },
         body: {
-          en: "Each licensee occupies an exclusive micro-region: your patients, your protocols, your brand on every digitally-signed document. Access is lifetime, following every evolution of the PAWARDS MedCore® engine, with no upgrade fees. The system learns from your practice, but your data remains inaccessible to any other clinic — including those inside the Circle itself.",
-          pt: "Cada licenciado ocupa uma micro-região exclusiva: seus clientes, seus protocolos, sua marca em cada documento assinado digitalmente. O acesso é vitalício às evoluções do motor PAWARDS MedCore®, sem taxas de upgrade. O sistema aprende com sua prática, mas seus dados permanecem inacessíveis a qualquer outra clínica — inclusive às do próprio Círculo.",
+          en: "Each licensee occupies an exclusive micro-region: your patients, your protocols, your brand on every digitally-signed document. Access is lifetime, following every evolution of the PAX MED engine, with no upgrade fees. The system learns from your practice, but your data remains inaccessible to any other clinic — including those inside the Circle itself.",
+          pt: "Cada licenciado ocupa uma micro-região exclusiva: seus clientes, seus protocolos, sua marca em cada documento assinado digitalmente. O acesso é vitalício às evoluções do motor PAX MED, sem taxas de upgrade. O sistema aprende com sua prática, mas seus dados permanecem inacessíveis a qualquer outra clínica — inclusive às do próprio Círculo.",
         },
       },
       {
         title: { en: "III · The Sub-licensor", pt: "III · O Sublicenciante" },
         lead: { en: "Admission unlocks a rare privilege: the right to refer.", pt: "A admissão abre um privilégio raro: o poder de indicar." },
         body: {
-          en: "A Parxis licensee may sub-license other clinics, provided each is approved by PAWARDS MedCore®. Every new referral you sponsor expands the network and generates a recurring participation over that clinic's license. Your clinical reputation ceases to be reputation alone: it becomes patrimony, income and legacy within the maison.",
-          pt: "Um licenciado Parxis pode sublicenciar outras clínicas, desde que aprovadas pela PAWARDS MedCore®. Cada nova indicação que você patrocina amplia a rede e gera uma participação recorrente sobre a licença daquela clínica. Sua reputação clínica deixa de ser apenas reputação: torna-se patrimônio, rendimento e legado dentro da maison.",
+          en: "A Pax Med licensee may sub-license other clinics, provided each is approved by PAX MED. Every new referral you sponsor expands the network and generates a recurring participation over that clinic's license. Your clinical reputation ceases to be reputation alone: it becomes patrimony, income and legacy within the maison.",
+          pt: "Um licenciado Pax Med pode sublicenciar outras clínicas, desde que aprovadas pela PAX MED. Cada nova indicação que você patrocina amplia a rede e gera uma participação recorrente sobre a licença daquela clínica. Sua reputação clínica deixa de ser apenas reputação: torna-se patrimônio, rendimento e legado dentro da maison.",
         },
       },
     ] as { title: B; lead: B; body: B }[],
     smallByChoice: {
       title: { en: "The Circle is small by choice — not by limitation.", pt: "O Círculo é pequeno por escolha — não por limitação." },
       body: {
-        en: "We cap each cohort at twelve licensees so that every admission receives the engineering, support and curation attention the standard demands. Scarcity is not marketing. It is the only way to preserve what makes Parxis valuable: being rare.",
-        pt: "Limitamos cada safra a doze licenciados para que cada admissão receba a atenção da engenharia, do suporte e da curadoria que o padrão exige. A escassez não é marketing. É a única forma de manter o que torna o Parxis valioso: ser raro.",
+        en: "We cap each cohort at twelve licensees so that every admission receives the engineering, support and curation attention the standard demands. Scarcity is not marketing. It is the only way to preserve what makes Pax Med valuable: being rare.",
+        pt: "Limitamos cada safra a doze licenciados para que cada admissão receba a atenção da engenharia, do suporte e da curadoria que o padrão exige. A escassez não é marketing. É a única forma de manter o que torna o Pax Med valioso: ser raro.",
       },
       count: { en: "12", pt: "12" },
       unit: { en: "licensees per cohort", pt: "licenciados por safra" },
@@ -204,11 +206,11 @@ export const content = {
 
   testimonial: {
     quote: {
-      en: "I was referred. I received access on a Wednesday. On Friday, I delivered the first legally-valid signed document to my patient. He looked at me differently. Parxis is not software — it is what separates a clinic from a clinic-maison.",
-      pt: "Fui indicado. Recebi o acesso em uma quarta-feira. Na sexta, entreguei o primeiro documento assinado com validade jurídica ao meu cliente. Ele me olhou de forma diferente. O Parxis não é software — é o que separa uma clínica de uma maison clínica.",
+      en: "I was referred. I received access on a Wednesday. On Friday, I delivered the first legally-valid signed document to my patient. He looked at me differently. Pax Med is not software — it is what separates a clinic from a clinic-maison.",
+      pt: "Fui indicado. Recebi o acesso em uma quarta-feira. Na sexta, entreguei o primeiro documento assinado com validade jurídica ao meu cliente. Ele me olhou de forma diferente. O Pax Med não é software — é o que separa uma clínica de uma maison clínica.",
     },
     name: { en: "Dr. Ricardo Almeida Ferreira", pt: "Dr. Ricardo Almeida Ferreira" },
-    role: { en: "Parxis Licensee · Integrative Medicine · Anti-Aging", pt: "Licenciado Parxis · Medicina Integrativa · Anti-Aging" },
+    role: { en: "Pax Med Licensee · Integrative Medicine · Anti-Aging", pt: "Licenciado Pax Med · Medicina Integrativa · Anti-Aging" },
   },
 
   videos: {
@@ -240,8 +242,8 @@ export const content = {
         title: { en: "Testimony 03", pt: "Depoimento 03" },
         role: { en: "Healthcare Operations", pt: "Operação em Saúde" },
         quote: {
-          en: "With every visit, the house's clinical database grows stronger. Parxis turned data into patrimony.",
-          pt: "A cada consulta, o banco clínico da casa fica mais forte. O Parxis transformou dados em patrimônio.",
+          en: "With every visit, the house's clinical database grows stronger. Pax Med turned data into patrimony.",
+          pt: "A cada consulta, o banco clínico da casa fica mais forte. O Pax Med transformou dados em patrimônio.",
         },
       },
     ] as { id: string; title: B; role: B; quote: B }[],
@@ -255,8 +257,8 @@ export const content = {
     titleGold: { en: "larger ecosystem", pt: "ecossistema maior" },
     titlePost: { en: ".", pt: "." },
     body: {
-      en: "PADCON Platform® is the corporate architecture that sustains PAWARDS MedCore® and PARXIS — unified identity, role-based security, permanent audit trails. Four sectors. Eighteen systems in development. Three in real production. One foundation.",
-      pt: "A PADCON Platform® é a arquitetura corporativa que sustenta a PAWARDS MedCore® e o PARXIS — identidade unificada, segurança por cargo, trilhas de auditoria permanentes. Quatro setores. Dezoito sistemas em desenvolvimento. Três em produção real. Uma fundação só.",
+      en: "PADCON Platform® is the corporate architecture that sustains PAX MED and PAX MED — unified identity, role-based security, permanent audit trails. Four sectors. Eighteen systems in development. Three in real production. One foundation.",
+      pt: "A PADCON Platform® é a arquitetura corporativa que sustenta a PAX MED e o PAX MED — identidade unificada, segurança por cargo, trilhas de auditoria permanentes. Quatro setores. Dezoito sistemas em desenvolvimento. Três em produção real. Uma fundação só.",
     },
     cta: { en: "Meet PADCON Platform®", pt: "Conheça a PADCON Platform®" },
   },
@@ -277,23 +279,23 @@ export const content = {
       en: "Candidacies received after closing are considered only for the next cohort. Scarcity is not a sales strategy — it is the only way to preserve the experience and integrity of the Circle.",
       pt: "As candidaturas recebidas após o fechamento são avaliadas apenas para a próxima safra. A escassez não é estratégia de vendas — é a única maneira de preservar a experiência e a integridade do Círculo.",
     },
-    cta: { en: "Request a letter of referral", pt: "Solicitar carta de indicação" },
+    cta: { en: "Request a demo", pt: "Solicitar demonstração" },
   },
 
   cta: {
-    eyebrow: { en: "Candidacy by Referral", pt: "Candidatura por Indicação" },
+    eyebrow: { en: "Demonstration Request", pt: "Solicitação de Demonstração" },
     titlePre: { en: "A conversation ", pt: "Uma conversa " },
     titleGold: { en: "behind closed doors", pt: "à porta fechada" },
     titlePost: { en: ".", pt: "." },
     lead: {
-      en: "We admit up to twelve licensees per cohort. If you were referred — or believe your clinic's standard justifies a referral — send your request. PAWARDS MedCore® reviews each candidacy personally.",
-      pt: "Recebemos até doze licenciados por safra. Se você foi indicado — ou acredita que o padrão da sua clínica justifica uma indicação — envie seu pedido. A PAWARDS MedCore® analisa cada candidatura pessoalmente.",
+      en: "We admit up to twelve licensees per cohort. If you were referred — or believe your clinic's standard justifies a referral — send your request. PAX MED reviews each candidacy personally.",
+      pt: "Recebemos até doze licenciados por safra. Médicos e clínicas interessados são bem-vindos: envie sua solicitação. A PAX MED analisa cada candidatura pessoalmente.",
     },
     submitted: {
       title: { en: "Your candidacy has been received.", pt: "Sua candidatura foi recebida." },
       body: {
-        en: "A representative of PAWARDS MedCore® will contact you within 48 hours, privately, only if your candidacy advances to the next stage. Silence, if it occurs, is also a respectful answer.",
-        pt: "Um responsável da PAWARDS MedCore® entrará em contato em até 48 horas, em caráter privado, apenas se sua candidatura avançar para a próxima etapa. O silêncio, se ocorrer, também é uma resposta respeitosa.",
+        en: "A representative of PAX MED will contact you within 48 hours, privately, only if your candidacy advances to the next stage. Silence, if it occurs, is also a respectful answer.",
+        pt: "Um responsável da PAX MED entrará em contato em até 48 horas, em caráter privado, apenas se sua candidatura avançar para a próxima etapa. O silêncio, se ocorrer, também é uma resposta respeitosa.",
       },
     },
     fields: {
@@ -310,7 +312,7 @@ export const content = {
       referrer: { en: "Who referred you · and why", pt: "Quem o indicou · e por quê" },
       referrerPh: {
         en: "If referred, state the physician's name. If not, describe why your clinic fits the Circle standard — protocols, monthly volume, what sets it apart.",
-        pt: "Se foi indicado, informe o nome do médico. Se não, descreva por que sua clínica se enquadra no padrão do Círculo Parxis — protocolos, volume mensal, o que a diferencia.",
+        pt: "Conte-nos sobre sua clínica: protocolos realizados, volume mensal e o que deseja alcançar com o PAX MED.",
       },
       selectPh: { en: "Select…", pt: "Selecione…" },
       selectOptional: { en: "Select (optional)…", pt: "Selecione (opcional)…" },
@@ -344,8 +346,8 @@ export const content = {
           pt: "Declaro ser médico responsável técnico por uma clínica em atividade, com CPF/CNPJ e registro profissional ativos.",
         },
         {
-          en: "I confirm that this candidacy is reviewed privately and that access to Parxis depends on a referral approved by PAWARDS MedCore®.",
-          pt: "Confirmo que a candidatura é analisada de forma privada e que o acesso ao Parxis depende de indicação aprovada pela PAWARDS MedCore®.",
+          en: "I confirm that this candidacy is reviewed privately and that access to Pax Med depends on a referral approved by PAX MED.",
+          pt: "Confirmo que a candidatura é analisada de forma privada e que a implantação do PAX MED depende da aprovação da equipe PAX MED.",
         },
         {
           en: "I understand that the number of licensees is limited to 12 per cohort and that receiving no reply also means the Circle's standard has been preserved.",
@@ -353,8 +355,8 @@ export const content = {
         },
       ] as B[],
       consent: {
-        en: "I have read and agree to the use of the data above for eligibility review, contact regarding my candidacy and, if approved, activation of the Parxis license, in accordance with LGPD. My data is treated in confidence, is not commercialised and may be requested for deletion at any time via ",
-        pt: "Li e concordo com o uso dos dados acima para análise de elegibilidade, contato sobre minha candidatura e, se aprovado, ativação da licença Parxis, conforme a LGPD. Seus dados são tratados em sigilo, não são comercializados e podem ser solicitados para exclusão a qualquer momento pelo email ",
+        en: "I have read and agree to the use of the data above for eligibility review, contact regarding my candidacy and, if approved, activation of the Pax Med license, in accordance with LGPD. My data is treated in confidence, is not commercialised and may be requested for deletion at any time via ",
+        pt: "Li e concordo com o uso dos dados acima para análise de elegibilidade, contato sobre minha candidatura e, se aprovado, ativação da licença Pax Med, conforme a LGPD. Seus dados são tratados em sigilo, não são comercializados e podem ser solicitados para exclusão a qualquer momento pelo email ",
       },
       email: { en: "contact@parxis.com.br", pt: "contato@parxis.com.br" },
     },
@@ -373,7 +375,7 @@ export const content = {
   vitrine: {
     gate: {
       eyebrow: { en: "Private demonstration", pt: "Demonstração privada" },
-      titlePre: { en: "The Parxis experience is ", pt: "A experiência Parxis é " },
+      titlePre: { en: "The Pax Med experience is ", pt: "A experiência Pax Med é " },
       titleGold: { en: "by invitation", pt: "por convite" },
       titlePost: { en: ".", pt: "." },
       lead: {
@@ -401,8 +403,8 @@ export const content = {
       patientTitle: { en: "Patient entrance", pt: "Entrada de paciente" },
       clinicTitle: { en: "Clinic entrance", pt: "Entrada de clínica" },
       consent: {
-        en: "I agree to be contacted about the Parxis demonstration and to the processing of my data under LGPD.",
-        pt: "Concordo em ser contactado sobre a demonstração Parxis e no tratamento dos meus dados conforme a LGPD.",
+        en: "I agree to be contacted about the Pax Med demonstration and to the processing of my data under LGPD.",
+        pt: "Concordo em ser contactado sobre a demonstração Pax Med e no tratamento dos meus dados conforme a LGPD.",
       },
       toasts: {
         nameShort: { en: "Please provide your full name.", pt: "Informe o nome completo." },
@@ -431,38 +433,38 @@ export const content = {
       title: { en: "The Circle is open for you", pt: "O Círculo está aberto para você" },
       patient: {
         body: {
-          en: "From the moment you schedule your appointment, Parxis prepares your clinical pathway. Your doctor receives an integrated cockpit, your documents are signed with legal validity and your reminders arrive at the biologically correct time.",
-          pt: "Desde o momento em que você agenda sua consulta, o Parxis prepara seu caminho clínico. Seu médico recebe um cockpit integrado, seus documentos são assinados com validade jurídica e seus lembretes chegam no momento biologicamente correto.",
+          en: "From the moment you schedule your appointment, Pax Med prepares your clinical pathway. Your doctor receives an integrated cockpit, your documents are signed with legal validity and your reminders arrive at the biologically correct time.",
+          pt: "Desde o momento em que você agenda sua consulta, o Pax Med prepara seu caminho clínico. Seu médico recebe um cockpit integrado, seus documentos são assinados com validade jurídica e seus lembretes chegam no momento biologicamente correto.",
         },
         cta: { en: "Schedule a private presentation", pt: "Agendar uma apresentação privada" },
       },
       clinic: {
         body: {
-          en: "Parxis turns your clinic into a maison: unified prescription, guided protocols, legally valid documents, laboratory evolution and a billing console with three scenarios. Everything in one screen, one decision at a time.",
-          pt: "O Parxis transforma sua clínica em uma maison: prescrição unificada, protocolos guiados, documentos com validade jurídica, evolução laboratorial e console de orçamento com três cenários. Tudo em uma tela, uma decisão de cada vez.",
+          en: "Pax Med turns your clinic into a maison: unified prescription, guided protocols, legally valid documents, laboratory evolution and a billing console with three scenarios. Everything in one screen, one decision at a time.",
+          pt: "O Pax Med transforma sua clínica em uma maison: prescrição unificada, protocolos guiados, documentos com validade jurídica, evolução laboratorial e console de orçamento com três cenários. Tudo em uma tela, uma decisão de cada vez.",
         },
-        cta: { en: "Request a referral letter", pt: "Solicitar carta de indicação" },
+        cta: { en: "Request a demo", pt: "Solicitar demonstração" },
       },
     },
   },
 
   footer: {
     tagline: {
-      en: "A PAWARDS MedCore® product — a PADCOM company. Granted by referral, kept by standard.",
-      pt: "Um produto PAWARDS MedCore® — uma empresa PADCOM. Concedido por indicação, mantido pelo padrão.",
+      en: "A PAX MED product — a PADCOM company. Granted by referral, kept by standard.",
+      pt: "Um produto PAX MED — uma empresa PADCOM. Exclusividade e alta precisão para a medicina integrativa.",
     },
     domain: { en: "padaxor.com.br", pt: "padaxor.com.br" },
     email: { en: "contact@padaxor.com.br", pt: "contato@padaxor.com.br" },
     established: { en: "Établi 2026", pt: "Établi 2026" },
     place: { en: "São Paulo · Brazil", pt: "São Paulo · Brasil" },
-    rights: { en: "© 2026 Padaxor · All rights reserved", pt: "© 2026 Padaxor · Todos os direitos reservados" },
+    rights: { en: "© 2026 Pax Med · All rights reserved", pt: "© 2026 Pax Med · Todos os direitos reservados" },
     signature: { en: "Made with precision", pt: "Feito com precisão" },
     columns: {
       house: {
         title: { en: "The House", pt: "A Casa" },
         lines: [
-          { en: "Padaxor · Clinical Intelligence System", pt: "Padaxor · Sistema de Inteligência Clínica" },
-          { en: "By PAWARDS MedCore®", pt: "Por PAWARDS MedCore®" },
+          { en: "Pax Med · Clinical Intelligence System", pt: "Pax Med · Sistema de Inteligência Clínica" },
+          { en: "By PAX MED", pt: "Por PAX MED" },
           { en: "Établi 2026", pt: "Établi 2026" },
           { en: "São Paulo · Brazil", pt: "São Paulo · Brasil" },
         ],
@@ -488,10 +490,10 @@ export const content = {
       register: {
         title: { en: "Register", pt: "Registro" },
         lines: [
-          { en: "PARXIS® · Registered mark", pt: "PARXIS® · Marca registrada" },
+          { en: "PAX MED® · Registered mark", pt: "PAX MED® · Marca registrada" },
           { en: "PADCON Platform® · INPI", pt: "PADCON Platform® · INPI" },
           { en: "CNPJ 00.000.000/0001-00", pt: "CNPJ 00.000.000/0001-00" },
-          { en: "By invitation only", pt: "Somente por indicação" },
+          { en: "Exclusive onboarding", pt: "Implantação exclusiva" },
         ],
       },
     },

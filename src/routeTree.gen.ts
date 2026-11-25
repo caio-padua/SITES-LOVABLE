@@ -9,36 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as StatusRouteImport } from './routes/status'
-import { Route as ReleasesRouteImport } from './routes/releases'
-import { Route as LoginRouteImport } from './routes/login'
-import { Route as DemonstracaoRouteImport } from './routes/demonstracao'
-import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as DemonstracaoRouteImport } from './routes/demonstracao'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as ReleasesRouteImport } from './routes/releases'
+import { Route as StatusRouteImport } from './routes/status'
 import { Route as DemonstracaoIndexRouteImport } from './routes/demonstracao.index'
-import { Route as LoginDiagRouteImport } from './routes/login.diag'
-import { Route as DemonstracaoPacienteRouteImport } from './routes/demonstracao.paciente'
 import { Route as DemonstracaoClinicaRouteImport } from './routes/demonstracao.clinica'
+import { Route as DemonstracaoPacienteRouteImport } from './routes/demonstracao.paciente'
+import { Route as LoginDiagRouteImport } from './routes/login.diag'
 import { Route as ApiPublicHealthRouteImport } from './routes/api/public/health'
 
-const StatusRoute = StatusRouteImport.update({
-  id: '/status',
-  path: '/status',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReleasesRoute = ReleasesRouteImport.update({
-  id: '/releases',
-  path: '/releases',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LoginRoute = LoginRouteImport.update({
-  id: '/login',
-  path: '/login',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DemonstracaoRoute = DemonstracaoRouteImport.update({
-  id: '/demonstracao',
-  path: '/demonstracao',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminRoute = AdminRouteImport.update({
@@ -46,9 +31,24 @@ const AdminRoute = AdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const DemonstracaoRoute = DemonstracaoRouteImport.update({
+  id: '/demonstracao',
+  path: '/demonstracao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReleasesRoute = ReleasesRouteImport.update({
+  id: '/releases',
+  path: '/releases',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StatusRoute = StatusRouteImport.update({
+  id: '/status',
+  path: '/status',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemonstracaoIndexRoute = DemonstracaoIndexRouteImport.update({
@@ -56,20 +56,20 @@ const DemonstracaoIndexRoute = DemonstracaoIndexRouteImport.update({
   path: '/',
   getParentRoute: () => DemonstracaoRoute,
 } as any)
-const LoginDiagRoute = LoginDiagRouteImport.update({
-  id: '/diag',
-  path: '/diag',
-  getParentRoute: () => LoginRoute,
+const DemonstracaoClinicaRoute = DemonstracaoClinicaRouteImport.update({
+  id: '/clinica',
+  path: '/clinica',
+  getParentRoute: () => DemonstracaoRoute,
 } as any)
 const DemonstracaoPacienteRoute = DemonstracaoPacienteRouteImport.update({
   id: '/paciente',
   path: '/paciente',
   getParentRoute: () => DemonstracaoRoute,
 } as any)
-const DemonstracaoClinicaRoute = DemonstracaoClinicaRouteImport.update({
-  id: '/clinica',
-  path: '/clinica',
-  getParentRoute: () => DemonstracaoRoute,
+const LoginDiagRoute = LoginDiagRouteImport.update({
+  id: '/diag',
+  path: '/diag',
+  getParentRoute: () => LoginRoute,
 } as any)
 const ApiPublicHealthRoute = ApiPublicHealthRouteImport.update({
   id: '/api/public/health',
@@ -169,32 +169,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/status': {
-      id: '/status'
-      path: '/status'
-      fullPath: '/status'
-      preLoaderRoute: typeof StatusRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/releases': {
-      id: '/releases'
-      path: '/releases'
-      fullPath: '/releases'
-      preLoaderRoute: typeof ReleasesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/demonstracao': {
-      id: '/demonstracao'
-      path: '/demonstracao'
-      fullPath: '/demonstracao'
-      preLoaderRoute: typeof DemonstracaoRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin': {
@@ -204,11 +183,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/demonstracao': {
+      id: '/demonstracao'
+      path: '/demonstracao'
+      fullPath: '/demonstracao'
+      preLoaderRoute: typeof DemonstracaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/releases': {
+      id: '/releases'
+      path: '/releases'
+      fullPath: '/releases'
+      preLoaderRoute: typeof ReleasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/status': {
+      id: '/status'
+      path: '/status'
+      fullPath: '/status'
+      preLoaderRoute: typeof StatusRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demonstracao/': {
@@ -218,12 +218,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemonstracaoIndexRouteImport
       parentRoute: typeof DemonstracaoRoute
     }
-    '/login/diag': {
-      id: '/login/diag'
-      path: '/diag'
-      fullPath: '/login/diag'
-      preLoaderRoute: typeof LoginDiagRouteImport
-      parentRoute: typeof LoginRoute
+    '/demonstracao/clinica': {
+      id: '/demonstracao/clinica'
+      path: '/clinica'
+      fullPath: '/demonstracao/clinica'
+      preLoaderRoute: typeof DemonstracaoClinicaRouteImport
+      parentRoute: typeof DemonstracaoRoute
     }
     '/demonstracao/paciente': {
       id: '/demonstracao/paciente'
@@ -232,12 +232,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemonstracaoPacienteRouteImport
       parentRoute: typeof DemonstracaoRoute
     }
-    '/demonstracao/clinica': {
-      id: '/demonstracao/clinica'
-      path: '/clinica'
-      fullPath: '/demonstracao/clinica'
-      preLoaderRoute: typeof DemonstracaoClinicaRouteImport
-      parentRoute: typeof DemonstracaoRoute
+    '/login/diag': {
+      id: '/login/diag'
+      path: '/diag'
+      fullPath: '/login/diag'
+      preLoaderRoute: typeof LoginDiagRouteImport
+      parentRoute: typeof LoginRoute
     }
     '/api/public/health': {
       id: '/api/public/health'

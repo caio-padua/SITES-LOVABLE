@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Link as RLink } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -14,6 +15,7 @@ import { useLang, tr, formatNumber, type Lang } from "@/contexts/LanguageContext
 import { content } from "@/content/parxis";
 import { GoldCorners } from "@/components/GoldCorners";
 import { LangSwitcher } from "@/components/LangSwitcher";
+import { PaxMedMonogram } from "@/components/PaxMedMonogram";
 import { PaxterMedalhao } from "@/components/PaxterMedalhao";
 
 void ampoulesWideAsset;
@@ -75,47 +77,58 @@ function Index() {
 function Nav() {
   const { lang } = useLang();
   const c = content.nav;
+  const link = "whitespace-nowrap rounded-sm hover:text-[color:var(--gold)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-black";
   return (
-    <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-[rgba(5,5,5,0.55)] border-b border-[rgba(242,184,23,0.12)]">
-      <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-10 h-14 sm:h-16 flex items-center justify-between gap-3 sm:gap-6">
-        <a
-          href="#top"
-          aria-label="Parxis — ir para o topo"
-          className="flex items-center gap-3 min-w-0 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-        >
-          <PaxterMedalhao size={38} />
-          <span className="flex flex-col justify-center min-w-0">
-            <img
-              src={parxisWordmarkUrl}
-              alt="PARXIS"
-              className="h-5 sm:h-6 w-auto object-contain select-none"
-              draggable={false}
-            />
-            <span className="hidden sm:inline text-[9px] uppercase tracking-[0.28em] text-[color:var(--gold)] opacity-80 truncate leading-none mt-0.5">
-              Clinical Intelligence System
+    <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-[rgba(5,5,5,0.62)] border-b border-[rgba(242,184,23,0.12)]">
+      <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-10 h-14 sm:h-16 grid grid-cols-[minmax(0,1fr)_auto] xl:flex items-center justify-between gap-3 sm:gap-6">
+        <a href="#top" aria-label="PAX MED — ir para o topo" className={"flex items-center gap-3 min-w-0 " + link}>
+          <PaxMedMonogram size={34} />
+          <span className="flex flex-col justify-center min-w-0 leading-none">
+            <span className="font-serif text-[18px] sm:text-[24px] font-semibold tracking-[0.14em] sm:tracking-[0.22em] parxis-gold-text whitespace-nowrap leading-tight">PAX MED</span>
+            <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.28em] text-[color:var(--gold)] opacity-80 whitespace-nowrap mt-0.5">
+              {tr(c.tagline, lang)}
             </span>
           </span>
         </a>
-        <nav className="hidden md:flex items-center gap-7 lg:gap-9 text-xs uppercase tracking-[0.24em] text-muted-foreground">
-          <a href="#manifesto" className="rounded-sm hover:text-[color:var(--gold)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-black">{tr(c.links.manifesto, lang)}</a>
-          <a href="#recursos" className="rounded-sm hover:text-[color:var(--gold)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-black">{tr(c.links.features, lang)}</a>
-          <a href="#tecnologia" className="rounded-sm hover:text-[color:var(--gold)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-black">{tr(c.links.technology, lang)}</a>
-          <a href="#clinicas" className="rounded-sm hover:text-[color:var(--gold)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-black">{tr(c.links.circle, lang)}</a>
-          <a href="#ecossistema" className="rounded-sm hover:text-[color:var(--gold)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-black">{tr(c.links.ecosystem, lang)}</a>
+        <nav aria-label="Seções" className="hidden xl:flex items-center gap-7 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+          <a href="#manifesto" className={link}>{tr(c.links.manifesto, lang)}</a>
+          <a href="#recursos" className={link}>{tr(c.links.features, lang)}</a>
+          <a href="#tecnologia" className={link}>{tr(c.links.technology, lang)}</a>
+          <a href="#clinicas" className={link}>{tr(c.links.circle, lang)}</a>
+          <a href="#ecossistema" className={link}>{tr(c.links.ecosystem, lang)}</a>
         </nav>
         <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           <ContrastToggle />
-          <MotionToggle />
-          <a
-            href="#contato"
-            className="parxis-btn parxis-btn-ghost parxis-btn-sm !hidden lg:!inline-flex focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-          >
-            <span className="parxis-btn-inner">{tr(c.cta, lang)}</span>
-          </a>
+          <span className="hidden sm:contents"><MotionToggle /></span>
           <LangSwitcher />
         </div>
       </div>
+      <div className="border-t border-[rgba(242,184,23,0.10)]">
+        <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-10 py-2 grid grid-cols-2 sm:flex items-center sm:justify-end gap-2 sm:gap-3">
+          <AccessLinks />
+          <a href="#contato" className="parxis-btn parxis-btn-primary parxis-btn-sm !hidden md:!inline-flex">
+            <span className="parxis-btn-inner whitespace-nowrap">{tr(c.cta, lang)}</span>
+          </a>
+        </div>
+      </div>
     </header>
+  );
+}
+
+/** Acessos B2B (médico/clínica) e B2C (paciente) → abas do /login. */
+function AccessLinks({ large = false }: { large?: boolean }) {
+  const { lang } = useLang();
+  const c = content.nav;
+  const cls = "parxis-btn parxis-btn-ghost " + (large ? "" : "parxis-btn-sm !px-2 sm:!px-4 !tracking-[0.08em] sm:!tracking-[0.2em]");
+  return (
+    <>
+      <RLink to="/login" search={{ perfil: "medico" }} className={cls}>
+        <span className="parxis-btn-inner whitespace-nowrap">{large ? tr(c.doctor, lang) : <><span className="sm:hidden">{lang === "pt" ? "Médico / Clínica" : "Physician / Clinic"}</span><span className="hidden sm:inline">{tr(c.doctor, lang)}</span></>}</span>
+      </RLink>
+      <RLink to="/login" search={{ perfil: "paciente" }} className={cls}>
+        <span className="parxis-btn-inner whitespace-nowrap">{tr(c.patient, lang)}</span>
+      </RLink>
+    </>
   );
 }
 
@@ -236,7 +249,7 @@ function Hero() {
   return (
     <section
       id="top"
-      className="parxis-hero relative pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden"
+      className="parxis-hero relative pt-40 pb-24 lg:pt-48 lg:pb-32 overflow-hidden"
       style={{
         ["--hero-bg-4k" as string]: `url(${heroBg4K.url})`,
         ["--hero-bg-qhd" as string]: `url(${heroBgQHD.url})`,
@@ -271,9 +284,9 @@ function Hero() {
                 <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
               </span>
             </a>
-            <a href="#clinicas" className="parxis-btn parxis-btn-ghost">
-              <span className="parxis-btn-inner">{tr(c.ctaSecondary, lang)}</span>
-            </a>
+          </div>
+          <div className="parxis-enter parxis-enter-4 mt-5 flex flex-wrap gap-3">
+            <AccessLinks large />
           </div>
 
           <div className="parxis-enter parxis-enter-4 mt-14 grid grid-cols-3 gap-6 max-w-md">
@@ -371,7 +384,7 @@ function ParxisMonogram() {
   }, []);
 
   return (
-    <div ref={stageRef} className="parxis-stage relative flex items-center justify-center min-h-[560px] lg:min-h-[640px]" aria-label="Parxis">
+    <div ref={stageRef} className="parxis-stage relative flex items-center justify-center min-h-[560px] lg:min-h-[640px]" aria-label="Pax Med">
       <div className="parxis-halo-conic" aria-hidden />
       <div className="parxis-aura parxis-aura-1" aria-hidden />
       <div className="parxis-aura parxis-aura-2" aria-hidden />
@@ -384,14 +397,14 @@ function ParxisMonogram() {
       <div className="parxis-symbol-wrap" aria-hidden>
         <div className="parxis-symbol-tilt">
           <div className="parxis-symbol-levitate">
-            <div className="parxis-symbol-img" role="img" aria-label="Símbolo Parxis" />
+            <PaxMedMonogram size={300} className="drop-shadow-[0_10px_40px_rgba(201,169,110,0.35)]" />
             <div className="parxis-symbol-sheen" aria-hidden />
           </div>
           <div className="parxis-shadow" aria-hidden />
           <div className="parxis-surface" aria-hidden />
         </div>
       </div>
-      <div className="parxis-wordmark" role="img" aria-label="PARXIS" />
+      <div className="absolute bottom-10 font-serif text-5xl lg:text-6xl font-semibold tracking-[0.3em] parxis-gold-text" role="img" aria-label="PAX MED">PAX MED</div>
     </div>
   );
 }
@@ -967,12 +980,12 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         {/* Brand row — each logo + wordmark pair locked to the same baseline/center midpoint */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8 items-center pb-12 border-b border-[rgba(242,184,23,0.18)]">
-          {/* LEFT — PADAXOR symbol on far left, text midpoint aligned to the logo's midpoint */}
+          {/* LEFT — PAX MED symbol on far left, text midpoint aligned to the logo's midpoint */}
           <div className="flex items-center justify-center md:justify-start gap-5 md:gap-8 h-[110px] sm:h-[128px] md:h-[144px]">
             <div className="h-[92px] sm:h-[108px] md:h-[124px] flex items-center justify-center shrink-0">
               <img
                 src={padaxorLogoAsset.url}
-                alt="PADAXOR"
+                alt="PAX MED"
                 className="h-full w-auto shrink-0 select-none object-contain"
                 draggable={false}
               />
@@ -982,7 +995,7 @@ function Footer() {
                 {lang === "pt" ? "Sistema de Inteligência Clínica" : "Clinical Intelligence System"}
               </div>
               <div className="font-serif font-semibold text-[18px] sm:text-[20px] md:text-[24px] tracking-[0.14em] bg-gradient-to-b from-[#F2E1B8] via-[#C9A96E] to-[#8C6E2E] bg-clip-text text-transparent drop-shadow-[0_1px_10px_rgba(201,169,110,0.35)] leading-none">
-                PADAXOR<span className="align-super text-[9px] sm:text-[10px] ml-0.5 text-[#C9A96E]">®</span>
+                PAX MED<span className="align-super text-[9px] sm:text-[10px] ml-0.5 text-[#C9A96E]">®</span>
               </div>
               <div className="font-serif text-[10px] sm:text-[11px] md:text-[12px] tracking-[0.08em] text-[#C9A96E]/75 whitespace-nowrap mt-1">
                 Clinical Intelligence System

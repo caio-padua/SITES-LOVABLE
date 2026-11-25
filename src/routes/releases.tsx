@@ -34,11 +34,11 @@ const STATUS_COLOR: Record<string, string> = {
 export const Route = createFileRoute("/releases")({
   head: () => ({
     meta: [
-      { title: "Releases — Parxis" },
-      { name: "description", content: "Histórico de versões e mudanças da plataforma Parxis." },
+      { title: "Releases — Pax Med" },
+      { name: "description", content: "Histórico de versões e mudanças da plataforma Pax Med." },
       { name: "robots", content: "noindex" },
-      { property: "og:title", content: "Releases — Parxis" },
-      { property: "og:description", content: "Changelog interno da plataforma Parxis." },
+      { property: "og:title", content: "Releases — Pax Med" },
+      { property: "og:description", content: "Changelog interno da plataforma Pax Med." },
     ],
   }),
   component: ReleasesPage,
