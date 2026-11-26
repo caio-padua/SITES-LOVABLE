@@ -1,6 +1,5 @@
 import paxmedWordmarkArt from "@/assets/paxmed_wordmark.png.asset.json";
 import { createFileRoute } from "@tanstack/react-router";
-import { Link as RLink } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -139,7 +138,7 @@ function Nav() {
   );
 }
 
-/** Acessos B2B (médico/clínica) e B2C (paciente) → abas do /login. */
+/** Acessos B2B (médico/clínica) e B2C (paciente) → site oficial. */
 function AccessLinks({ large = false }: { large?: boolean }) {
   const { lang } = useLang();
   const c = content.nav;
@@ -148,7 +147,7 @@ function AccessLinks({ large = false }: { large?: boolean }) {
     (large ? "" : "parxis-btn-sm !px-2 sm:!px-4 !tracking-[0.08em] sm:!tracking-[0.2em]");
   return (
     <>
-      <RLink to="/login" search={{ perfil: "medico" }} className={cls}>
+      <a href="https://paxmed.com.br" className={cls}>
         <span className="parxis-btn-inner whitespace-nowrap">
           {large ? (
             tr(c.doctor, lang)
@@ -159,10 +158,10 @@ function AccessLinks({ large = false }: { large?: boolean }) {
             </>
           )}
         </span>
-      </RLink>
-      <RLink to="/login" search={{ perfil: "paciente" }} className={cls}>
+      </a>
+      <a href="https://paxmed.com.br" className={cls}>
         <span className="parxis-btn-inner whitespace-nowrap">{tr(c.patient, lang)}</span>
-      </RLink>
+      </a>
     </>
   );
 }
