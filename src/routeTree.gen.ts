@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminRouteImport } from './routes/admin'
+import { Route as ConviteRouteImport } from './routes/convite'
 import { Route as DemonstracaoRouteImport } from './routes/demonstracao'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as ReleasesRouteImport } from './routes/releases'
@@ -29,6 +30,11 @@ const IndexRoute = IndexRouteImport.update({
 const AdminRoute = AdminRouteImport.update({
   id: '/admin',
   path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConviteRoute = ConviteRouteImport.update({
+  id: '/convite',
+  path: '/convite',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemonstracaoRoute = DemonstracaoRouteImport.update({
@@ -80,6 +86,7 @@ const ApiPublicHealthRoute = ApiPublicHealthRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
+  '/convite': typeof ConviteRoute
   '/demonstracao': typeof DemonstracaoRouteWithChildren
   '/login': typeof LoginRouteWithChildren
   '/releases': typeof ReleasesRoute
@@ -93,6 +100,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
+  '/convite': typeof ConviteRoute
   '/login': typeof LoginRouteWithChildren
   '/releases': typeof ReleasesRoute
   '/status': typeof StatusRoute
@@ -106,6 +114,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
+  '/convite': typeof ConviteRoute
   '/demonstracao': typeof DemonstracaoRouteWithChildren
   '/login': typeof LoginRouteWithChildren
   '/releases': typeof ReleasesRoute
@@ -121,6 +130,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/admin'
+    | '/convite'
     | '/demonstracao'
     | '/login'
     | '/releases'
@@ -134,6 +144,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/admin'
+    | '/convite'
     | '/login'
     | '/releases'
     | '/status'
@@ -146,6 +157,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/admin'
+    | '/convite'
     | '/demonstracao'
     | '/login'
     | '/releases'
@@ -160,6 +172,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
+  ConviteRoute: typeof ConviteRoute
   DemonstracaoRoute: typeof DemonstracaoRouteWithChildren
   LoginRoute: typeof LoginRouteWithChildren
   ReleasesRoute: typeof ReleasesRoute
@@ -181,6 +194,13 @@ declare module '@tanstack/react-router' {
       path: '/admin'
       fullPath: '/admin'
       preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/convite': {
+      id: '/convite'
+      path: '/convite'
+      fullPath: '/convite'
+      preLoaderRoute: typeof ConviteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demonstracao': {
@@ -278,6 +298,7 @@ const LoginRouteWithChildren = LoginRoute._addFileChildren(LoginRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
+  ConviteRoute: ConviteRoute,
   DemonstracaoRoute: DemonstracaoRouteWithChildren,
   LoginRoute: LoginRouteWithChildren,
   ReleasesRoute: ReleasesRoute,

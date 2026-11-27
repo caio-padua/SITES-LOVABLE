@@ -14,6 +14,54 @@ export type Database = {
   }
   public: {
     Tables: {
+      convite_solicitacoes: {
+        Row: {
+          cidade: string
+          clinica: string | null
+          created_at: string
+          crm: string
+          email: string
+          especialidade: string
+          id: string
+          mensagem: string | null
+          nome: string
+          protocolo: string
+          status: string
+          uf: string
+          updated_at: string
+        }
+        Insert: {
+          cidade: string
+          clinica?: string | null
+          created_at?: string
+          crm: string
+          email: string
+          especialidade: string
+          id?: string
+          mensagem?: string | null
+          nome: string
+          protocolo: string
+          status?: string
+          uf: string
+          updated_at?: string
+        }
+        Update: {
+          cidade?: string
+          clinica?: string | null
+          created_at?: string
+          crm?: string
+          email?: string
+          especialidade?: string
+          id?: string
+          mensagem?: string | null
+          nome?: string
+          protocolo?: string
+          status?: string
+          uf?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       leads: {
         Row: {
           clinica: string
