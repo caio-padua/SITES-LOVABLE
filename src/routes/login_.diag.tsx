@@ -20,7 +20,7 @@ import {
 import { checkLockout } from "@/lib/login-lockout";
 import { getFlags } from "@/lib/feature-flags";
 
-export const Route = createFileRoute("/login/diag")({
+export const Route = createFileRoute("/login_/diag")({
   head: () => ({
     meta: [
       { title: "Diagnóstico de Login — PAXMED" },

@@ -19,7 +19,7 @@ import { Route as StatusRouteImport } from './routes/status'
 import { Route as DemonstracaoIndexRouteImport } from './routes/demonstracao.index'
 import { Route as DemonstracaoClinicaRouteImport } from './routes/demonstracao.clinica'
 import { Route as DemonstracaoPacienteRouteImport } from './routes/demonstracao.paciente'
-import { Route as LoginDiagRouteImport } from './routes/login.diag'
+import { Route as LoginDiagRouteImport } from './routes/login_.diag'
 import { Route as ApiPublicHealthRouteImport } from './routes/api/public/health'
 
 const IndexRoute = IndexRouteImport.update({
@@ -73,9 +73,9 @@ const DemonstracaoPacienteRoute = DemonstracaoPacienteRouteImport.update({
   getParentRoute: () => DemonstracaoRoute,
 } as any)
 const LoginDiagRoute = LoginDiagRouteImport.update({
-  id: '/diag',
-  path: '/diag',
-  getParentRoute: () => LoginRoute,
+  id: '/login_/diag',
+  path: '/login/diag',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPublicHealthRoute = ApiPublicHealthRouteImport.update({
   id: '/api/public/health',
@@ -88,7 +88,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminRoute
   '/convite': typeof ConviteRoute
   '/demonstracao': typeof DemonstracaoRouteWithChildren
-  '/login': typeof LoginRouteWithChildren
+  '/login': typeof LoginRoute
   '/releases': typeof ReleasesRoute
   '/status': typeof StatusRoute
   '/demonstracao/clinica': typeof DemonstracaoClinicaRoute
@@ -101,7 +101,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/convite': typeof ConviteRoute
-  '/login': typeof LoginRouteWithChildren
+  '/login': typeof LoginRoute
   '/releases': typeof ReleasesRoute
   '/status': typeof StatusRoute
   '/demonstracao/clinica': typeof DemonstracaoClinicaRoute
@@ -116,12 +116,12 @@ export interface FileRoutesById {
   '/admin': typeof AdminRoute
   '/convite': typeof ConviteRoute
   '/demonstracao': typeof DemonstracaoRouteWithChildren
-  '/login': typeof LoginRouteWithChildren
+  '/login': typeof LoginRoute
   '/releases': typeof ReleasesRoute
   '/status': typeof StatusRoute
   '/demonstracao/clinica': typeof DemonstracaoClinicaRoute
   '/demonstracao/paciente': typeof DemonstracaoPacienteRoute
-  '/login/diag': typeof LoginDiagRoute
+  '/login_/diag': typeof LoginDiagRoute
   '/demonstracao/': typeof DemonstracaoIndexRoute
   '/api/public/health': typeof ApiPublicHealthRoute
 }
@@ -164,7 +164,7 @@ export interface FileRouteTypes {
     | '/status'
     | '/demonstracao/clinica'
     | '/demonstracao/paciente'
-    | '/login/diag'
+    | '/login_/diag'
     | '/demonstracao/'
     | '/api/public/health'
   fileRoutesById: FileRoutesById
@@ -174,9 +174,10 @@ export interface RootRouteChildren {
   AdminRoute: typeof AdminRoute
   ConviteRoute: typeof ConviteRoute
   DemonstracaoRoute: typeof DemonstracaoRouteWithChildren
-  LoginRoute: typeof LoginRouteWithChildren
+  LoginRoute: typeof LoginRoute
   ReleasesRoute: typeof ReleasesRoute
   StatusRoute: typeof StatusRoute
+  LoginDiagRoute: typeof LoginDiagRoute
   ApiPublicHealthRoute: typeof ApiPublicHealthRoute
 }
 
@@ -252,12 +253,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemonstracaoPacienteRouteImport
       parentRoute: typeof DemonstracaoRoute
     }
-    '/login/diag': {
-      id: '/login/diag'
-      path: '/diag'
+    '/login_/diag': {
+      id: '/login_/diag'
+      path: '/login/diag'
       fullPath: '/login/diag'
       preLoaderRoute: typeof LoginDiagRouteImport
-      parentRoute: typeof LoginRoute
+      parentRoute: typeof rootRouteImport
     }
     '/api/public/health': {
       id: '/api/public/health'
@@ -285,24 +286,15 @@ const DemonstracaoRouteWithChildren = DemonstracaoRoute._addFileChildren(
   DemonstracaoRouteChildren,
 )
 
-interface LoginRouteChildren {
-  LoginDiagRoute: typeof LoginDiagRoute
-}
-
-const LoginRouteChildren: LoginRouteChildren = {
-  LoginDiagRoute: LoginDiagRoute,
-}
-
-const LoginRouteWithChildren = LoginRoute._addFileChildren(LoginRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   ConviteRoute: ConviteRoute,
   DemonstracaoRoute: DemonstracaoRouteWithChildren,
-  LoginRoute: LoginRouteWithChildren,
+  LoginRoute: LoginRoute,
   ReleasesRoute: ReleasesRoute,
   StatusRoute: StatusRoute,
+  LoginDiagRoute: LoginDiagRoute,
   ApiPublicHealthRoute: ApiPublicHealthRoute,
 }
 export const routeTree = rootRouteImport

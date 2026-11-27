@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { isSuccessfulHttp } from "@/lib/service-health";
 type Check = { name: string; ok: boolean; ms: number; detail: string };
 
 async function timed(name: string, fn: () => Promise<{ ok: boolean; detail: string }>): Promise<Check> {
@@ -36,11 +37,12 @@ export const Route = createFileRoute("/api/public/health")({
           await timed("Banco de dados", async () => {
             if (!supabaseUrl || !supabaseKey) return { ok: false, detail: "sem credenciais" };
             const res = await fetch(`${supabaseUrl}/rest/v1/`, {
-              headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` },
+              headers: { apikey: supabaseKey },
               cache: "no-store",
+              signal: AbortSignal.timeout(5000),
             });
-            // Any HTTP response < 500 means PostgREST + DB are reachable.
-            const reachable = res.status > 0 && res.status < 500;
+            // A rejected catalog request cannot certify database access or CRUD.
+            const reachable = isSuccessfulHttp(res.status);
             return { ok: reachable, detail: `PostgREST HTTP ${res.status}` };
           }),
         );

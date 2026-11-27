@@ -1,0 +1,259 @@
+largura,pagina,elemento,rotulo,destino,nome_campo,tipo,visivel,obrigatorio,desabilitado
+1280,/,A,Pular para o conteúdo,#top,,,True,False,False
+1280,/,A,PAXMED — ir para o topo,#top,,,True,False,False
+1280,/,A,MANIFESTO,#manifesto,,,True,False,False
+1280,/,A,RECURSOS,#recursos,,,True,False,False
+1280,/,A,INTELIGÊNCIA,#tecnologia,,,True,False,False
+1280,/,A,O CÍRCULO,#clinicas,,,True,False,False
+1280,/,A,ECOSSISTEMA,#ecossistema,,,True,False,False
+1280,/,BUTTON,Contraste normal — clique para aumentar,,,button,True,False,False
+1280,/,BUTTON,Animações ativas — clique para reduzir,,,button,True,False,False
+1280,/,BUTTON,Idioma EN,,,button,True,False,False
+1280,/,BUTTON,Idioma PT,,,button,True,False,False
+1280,/,A,ÁREA DO MÉDICO / CLÍNICA,https://paxmed.com.br/login,,,True,False,False
+1280,/,A,PORTAL DO PACIENTE,https://paxmed.com.br/area,,,True,False,False
+1280,/,A,CONHECER PLANOS / SOLICITAR DEMONSTRAÇÃO,#contato,,,True,False,False
+1280,/,A,"CONHECER PLANOS / SOLICITAR DEMONSTRAÇÃO
+→",#contato,,,True,False,False
+1280,/,A,ÁREA DO MÉDICO / CLÍNICA,https://paxmed.com.br/login,,,True,False,False
+1280,/,A,PORTAL DO PACIENTE,https://paxmed.com.br/area,,,True,False,False
+1280,/,BUTTON,Reproduzir Depoimento 01,,,button,True,False,False
+1280,/,BUTTON,Reproduzir Depoimento 02,,,button,True,False,False
+1280,/,BUTTON,Reproduzir Depoimento 03,,,button,True,False,False
+1280,/,BUTTON,Ir para depoimento 1,,,button,True,False,False
+1280,/,BUTTON,Ir para depoimento 2,,,button,True,False,False
+1280,/,BUTTON,Ir para depoimento 3,,,button,True,False,False
+1280,/,A,"CONHEÇA A PADCON PLATFORM®
+→",https://padcon.replit.app/,,,True,False,False
+1280,/,A,"SOLICITAR DEMONSTRAÇÃO
+→",#contato,,,True,False,False
+1280,/,INPUT,Dr(a). Nome Sobrenome,,nome,text,True,True,False
+1280,/,INPUT,voce@clinica.com.br,,email,email,True,True,False
+1280,/,INPUT,(11) 90000-0000,,telefone,tel,True,False,False
+1280,/,INPUT,Maison Clínica Integrativa,,clinica,text,True,True,False
+1280,/,SELECT,"Selecione…
+Medicina Integrativa
+Estética / Injetáveis
+Longevidade / Anti-Aging
+Ortomolecular
+Endocrinologia
+Nutrologia
+Ginecologia Integrativa
+Outra",,especialidade,select-one,True,True,False
+1280,/,SELECT,"Selecione (opcional)…
+1 a 10
+11 a 30
+31 a 80
+81 a 200
+Mais de 200",,volume_protocolos,select-one,True,False,False
+1280,/,TEXTAREA,"Conte-nos sobre sua clínica: protocolos realizados, volume mensal e o que deseja alcançar com o PAXMED.",,necessidade,textarea,True,True,False
+1280,/,BUTTON,"ENVIAR CANDIDATURA
+→",,,submit,True,False,False
+1280,/,INPUT,,,,checkbox,True,False,False
+1280,/login,A,PAXMED,/,,,True,False,False
+1280,/login,A,← VOLTAR AO SITE,/,,,True,False,False
+1280,/login,BUTTON,Idioma EN,,,button,True,False,False
+1280,/login,BUTTON,Idioma PT,,,button,True,False,False
+1280,/login,BUTTON,Sou Médico ou Clínica,,,button,True,False,False
+1280,/login,BUTTON,Sou Paciente,,,button,True,False,False
+1280,/login,INPUT,voce@clinica.com.br,,,text,True,True,False
+1280,/login,BUTTON,ESQUECI MINHA SENHA,,,button,True,False,False
+1280,/login,INPUT,••••••••••••,,,password,True,True,False
+1280,/login,BUTTON,Mostrar senha,,,button,True,False,False
+1280,/login,BUTTON,ACESSAR PAXMED,,,submit,True,False,False
+1280,/login,BUTTON,OAuth 2.1 — OAuth 2.1 · Sign in with Google,,,button,True,False,False
+1280,/login,BUTTON,HIBP — HIBP · verificação de vazamentos,,,button,True,False,False
+1280,/login,BUTTON,TLS 1.3 — TLS 1.3 · canal cifrado moderno,,,button,True,False,False
+1280,/login,BUTTON,LGPD · RLS — LGPD · isolamento por Row-Level Security,,,button,True,False,False
+1280,/convite,A,← VOLTAR AO INÍCIO,/,,,True,False,False
+1280,/convite,INPUT,nome,,nome,text,True,True,False
+1280,/convite,INPUT,email,,email,email,True,True,False
+1280,/convite,INPUT,crm,,crm,text,True,True,False
+1280,/convite,INPUT,uf,,uf,text,True,True,False
+1280,/convite,INPUT,especialidade,,especialidade,text,True,True,False
+1280,/convite,INPUT,clinica,,clinica,text,True,False,False
+1280,/convite,INPUT,cidade,,cidade,text,True,True,False
+1280,/convite,TEXTAREA,mensagem,,mensagem,textarea,True,False,False
+1280,/convite,INPUT,,,,checkbox,True,False,False
+1280,/convite,BUTTON,ENVIAR SOLICITAÇÃO,,,submit,True,False,False
+1280,/convite,INPUT,q-protocolo,,q-protocolo,text,True,True,False
+1280,/convite,INPUT,q-email,,q-email,email,True,True,False
+1280,/convite,BUTTON,CONSULTAR,,,submit,True,False,False
+1280,/admin,INPUT,,,,email,True,True,False
+1280,/admin,INPUT,,,,password,True,True,False
+1280,/admin,BUTTON,ENTRAR,,,submit,True,False,False
+1280,/admin,BUTTON,PRIMEIRO ACESSO · CRIAR CONTA,,,button,True,False,False
+1280,/releases,A,Ir para o site,/,,,True,False,False
+1280,/releases,A,Ver status,/status,,,True,False,False
+1280,/status,INPUT,,,,checkbox,True,False,False
+1280,/status,SELECT,"10s
+30s
+1min
+5min",,,select-one,True,False,False
+1280,/status,BUTTON,Executar auto-teste,,,submit,True,False,False
+1280,/status,A,Ir para o site,/,,,True,False,False
+1280,/status,A,Acessar login,/login,,,True,False,False
+1280,/login/diag,A,voltar ao login,/login,,,True,False,False
+1280,/login/diag,INPUT,usuário para checar lockout (opcional),,,text,True,False,False
+1280,/login/diag,BUTTON,re-executar,,,submit,True,False,False
+1280,/demonstracao,A,,/,,,True,False,False
+1280,/demonstracao,A,← VOLTAR AO SITE,/,,,True,False,False
+1280,/demonstracao,BUTTON,Idioma EN,,,button,True,False,False
+1280,/demonstracao,BUTTON,Idioma PT,,,button,True,False,False
+1280,/demonstracao,A,"Sou paciente
+Veja como sua jornada clínica fica mais simples, segura e elegante.
+→",/demonstracao/paciente,,,True,False,False
+1280,/demonstracao,A,"Sou clínica
+Veja como o motor clínico opera prescrições, protocolos e documentos.
+→",/demonstracao/clinica,,,True,False,False
+1280,/demonstracao/clinica,A,,/,,,True,False,False
+1280,/demonstracao/clinica,A,← VOLTAR AO SITE,/,,,True,False,False
+1280,/demonstracao/clinica,BUTTON,Idioma EN,,,button,True,False,False
+1280,/demonstracao/clinica,BUTTON,Idioma PT,,,button,True,False,False
+1280,/demonstracao/clinica,INPUT,,,,text,True,False,False
+1280,/demonstracao/clinica,INPUT,Seu nome completo,,,text,True,True,False
+1280,/demonstracao/clinica,INPUT,000.000.000-00,,,text,True,True,False
+1280,/demonstracao/clinica,INPUT,00.000.000/0000-00,,,text,True,True,False
+1280,/demonstracao/clinica,INPUT,(00) 00000-0000,,,text,True,True,False
+1280,/demonstracao/clinica,INPUT,,,,checkbox,True,False,False
+1280,/demonstracao/clinica,BUTTON,ABRIR A PORTA,,,submit,True,False,False
+1280,/demonstracao/paciente,A,,/,,,True,False,False
+1280,/demonstracao/paciente,A,← VOLTAR AO SITE,/,,,True,False,False
+1280,/demonstracao/paciente,BUTTON,Idioma EN,,,button,True,False,False
+1280,/demonstracao/paciente,BUTTON,Idioma PT,,,button,True,False,False
+1280,/demonstracao/paciente,INPUT,,,,text,True,False,False
+1280,/demonstracao/paciente,INPUT,Seu nome completo,,,text,True,True,False
+1280,/demonstracao/paciente,INPUT,000.000.000-00,,,text,True,True,False
+1280,/demonstracao/paciente,INPUT,(00) 00000-0000,,,text,True,True,False
+1280,/demonstracao/paciente,INPUT,,,,checkbox,True,False,False
+1280,/demonstracao/paciente,BUTTON,ABRIR A PORTA,,,submit,True,False,False
+1280,/area,A,Go home,/,,,True,False,False
+390,/,A,Pular para o conteúdo,#top,,,True,False,False
+390,/,A,PAXMED — ir para o topo,#top,,,True,False,False
+390,/,A,Manifesto,#manifesto,,,False,False,False
+390,/,A,Recursos,#recursos,,,False,False,False
+390,/,A,Inteligência,#tecnologia,,,False,False,False
+390,/,A,O Círculo,#clinicas,,,False,False,False
+390,/,A,Ecossistema,#ecossistema,,,False,False,False
+390,/,BUTTON,Contraste normal — clique para aumentar,,,button,True,False,False
+390,/,BUTTON,Animações ativas — clique para reduzir,,,button,False,False,False
+390,/,BUTTON,Idioma EN,,,button,True,False,False
+390,/,BUTTON,Idioma PT,,,button,True,False,False
+390,/,A,MÉDICO / CLÍNICA,https://paxmed.com.br/login,,,True,False,False
+390,/,A,PORTAL DO PACIENTE,https://paxmed.com.br/area,,,True,False,False
+390,/,A,Conhecer Planos / Solicitar Demonstração,#contato,,,False,False,False
+390,/,A,"CONHECER PLANOS / SOLICITAR DEMONSTRAÇÃO
+→",#contato,,,True,False,False
+390,/,A,ÁREA DO MÉDICO / CLÍNICA,https://paxmed.com.br/login,,,True,False,False
+390,/,A,PORTAL DO PACIENTE,https://paxmed.com.br/area,,,True,False,False
+390,/,BUTTON,Reproduzir Depoimento 01,,,button,True,False,False
+390,/,BUTTON,Reproduzir Depoimento 02,,,button,True,False,False
+390,/,BUTTON,Reproduzir Depoimento 03,,,button,True,False,False
+390,/,BUTTON,Ir para depoimento 1,,,button,True,False,False
+390,/,BUTTON,Ir para depoimento 2,,,button,True,False,False
+390,/,BUTTON,Ir para depoimento 3,,,button,True,False,False
+390,/,A,"CONHEÇA A PADCON PLATFORM®
+→",https://padcon.replit.app/,,,True,False,False
+390,/,A,"SOLICITAR DEMONSTRAÇÃO
+→",#contato,,,True,False,False
+390,/,INPUT,Dr(a). Nome Sobrenome,,nome,text,True,True,False
+390,/,INPUT,voce@clinica.com.br,,email,email,True,True,False
+390,/,INPUT,(11) 90000-0000,,telefone,tel,True,False,False
+390,/,INPUT,Maison Clínica Integrativa,,clinica,text,True,True,False
+390,/,SELECT,"Selecione…
+Medicina Integrativa
+Estética / Injetáveis
+Longevidade / Anti-Aging
+Ortomolecular
+Endocrinologia
+Nutrologia
+Ginecologia Integrativa
+Outra",,especialidade,select-one,True,True,False
+390,/,SELECT,"Selecione (opcional)…
+1 a 10
+11 a 30
+31 a 80
+81 a 200
+Mais de 200",,volume_protocolos,select-one,True,False,False
+390,/,TEXTAREA,"Conte-nos sobre sua clínica: protocolos realizados, volume mensal e o que deseja alcançar com o PAXMED.",,necessidade,textarea,True,True,False
+390,/,BUTTON,"ENVIAR CANDIDATURA
+→",,,submit,True,False,False
+390,/,INPUT,,,,checkbox,True,False,False
+390,/login,A,PAXMED,/,,,True,False,False
+390,/login,A,← Voltar ao site,/,,,False,False,False
+390,/login,BUTTON,Idioma EN,,,button,True,False,False
+390,/login,BUTTON,Idioma PT,,,button,True,False,False
+390,/login,BUTTON,Sou Médico ou Clínica,,,button,True,False,False
+390,/login,BUTTON,Sou Paciente,,,button,True,False,False
+390,/login,INPUT,voce@clinica.com.br,,,text,True,True,False
+390,/login,BUTTON,ESQUECI MINHA SENHA,,,button,True,False,False
+390,/login,INPUT,••••••••••••,,,password,True,True,False
+390,/login,BUTTON,Mostrar senha,,,button,True,False,False
+390,/login,BUTTON,ACESSAR PAXMED,,,submit,True,False,False
+390,/login,BUTTON,OAuth 2.1 — OAuth 2.1 · Sign in with Google,,,button,True,False,False
+390,/login,BUTTON,HIBP — HIBP · verificação de vazamentos,,,button,True,False,False
+390,/login,BUTTON,TLS 1.3 — TLS 1.3 · canal cifrado moderno,,,button,True,False,False
+390,/login,BUTTON,LGPD · RLS — LGPD · isolamento por Row-Level Security,,,button,True,False,False
+390,/convite,A,← VOLTAR AO INÍCIO,/,,,True,False,False
+390,/convite,INPUT,nome,,nome,text,True,True,False
+390,/convite,INPUT,email,,email,email,True,True,False
+390,/convite,INPUT,crm,,crm,text,True,True,False
+390,/convite,INPUT,uf,,uf,text,True,True,False
+390,/convite,INPUT,especialidade,,especialidade,text,True,True,False
+390,/convite,INPUT,clinica,,clinica,text,True,False,False
+390,/convite,INPUT,cidade,,cidade,text,True,True,False
+390,/convite,TEXTAREA,mensagem,,mensagem,textarea,True,False,False
+390,/convite,INPUT,,,,checkbox,True,False,False
+390,/convite,BUTTON,ENVIAR SOLICITAÇÃO,,,submit,True,False,False
+390,/convite,INPUT,q-protocolo,,q-protocolo,text,True,True,False
+390,/convite,INPUT,q-email,,q-email,email,True,True,False
+390,/convite,BUTTON,CONSULTAR,,,submit,True,False,False
+390,/admin,INPUT,,,,email,True,True,False
+390,/admin,INPUT,,,,password,True,True,False
+390,/admin,BUTTON,ENTRAR,,,submit,True,False,False
+390,/admin,BUTTON,PRIMEIRO ACESSO · CRIAR CONTA,,,button,True,False,False
+390,/releases,A,Ir para o site,/,,,True,False,False
+390,/releases,A,Ver status,/status,,,True,False,False
+390,/status,INPUT,,,,checkbox,True,False,False
+390,/status,SELECT,"10s
+30s
+1min
+5min",,,select-one,True,False,False
+390,/status,BUTTON,Executar auto-teste,,,submit,True,False,False
+390,/status,A,Ir para o site,/,,,True,False,False
+390,/status,A,Acessar login,/login,,,True,False,False
+390,/login/diag,A,voltar ao login,/login,,,True,False,False
+390,/login/diag,INPUT,usuário para checar lockout (opcional),,,text,True,False,False
+390,/login/diag,BUTTON,re-executar,,,submit,True,False,False
+390,/demonstracao,A,,/,,,True,False,False
+390,/demonstracao,A,← Voltar ao site,/,,,False,False,False
+390,/demonstracao,BUTTON,Idioma EN,,,button,True,False,False
+390,/demonstracao,BUTTON,Idioma PT,,,button,True,False,False
+390,/demonstracao,A,"Sou paciente
+Veja como sua jornada clínica fica mais simples, segura e elegante.
+→",/demonstracao/paciente,,,True,False,False
+390,/demonstracao,A,"Sou clínica
+Veja como o motor clínico opera prescrições, protocolos e documentos.
+→",/demonstracao/clinica,,,True,False,False
+390,/demonstracao/clinica,A,,/,,,True,False,False
+390,/demonstracao/clinica,A,← Voltar ao site,/,,,False,False,False
+390,/demonstracao/clinica,BUTTON,Idioma EN,,,button,True,False,False
+390,/demonstracao/clinica,BUTTON,Idioma PT,,,button,True,False,False
+390,/demonstracao/clinica,INPUT,,,,text,True,False,False
+390,/demonstracao/clinica,INPUT,Seu nome completo,,,text,True,True,False
+390,/demonstracao/clinica,INPUT,000.000.000-00,,,text,True,True,False
+390,/demonstracao/clinica,INPUT,00.000.000/0000-00,,,text,True,True,False
+390,/demonstracao/clinica,INPUT,(00) 00000-0000,,,text,True,True,False
+390,/demonstracao/clinica,INPUT,,,,checkbox,True,False,False
+390,/demonstracao/clinica,BUTTON,ABRIR A PORTA,,,submit,True,False,False
+390,/demonstracao/paciente,A,,/,,,True,False,False
+390,/demonstracao/paciente,A,← Voltar ao site,/,,,False,False,False
+390,/demonstracao/paciente,BUTTON,Idioma EN,,,button,True,False,False
+390,/demonstracao/paciente,BUTTON,Idioma PT,,,button,True,False,False
+390,/demonstracao/paciente,INPUT,,,,text,True,False,False
+390,/demonstracao/paciente,INPUT,Seu nome completo,,,text,True,True,False
+390,/demonstracao/paciente,INPUT,000.000.000-00,,,text,True,True,False
+390,/demonstracao/paciente,INPUT,(00) 00000-0000,,,text,True,True,False
+390,/demonstracao/paciente,INPUT,,,,checkbox,True,False,False
+390,/demonstracao/paciente,BUTTON,ABRIR A PORTA,,,submit,True,False,False
+390,/area,A,Go home,/,,,True,False,False

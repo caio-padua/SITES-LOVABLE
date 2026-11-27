@@ -10,3 +10,5 @@
 <!-- LOVABLE:END -->
 
 - Keep the header live logo in `PaxmedLiveLogo` using the supplied `paxter-fx` engines and CDN raster faces; this isolates official effects from the untouched hero animation.
+- Keep `/login/diag` non-nested under the legacy login with `login_.diag.tsx`; the login page has no child outlet.
+- Use the shared service-health rules for status summaries and HTTP probes; reachability or a rejected request must not certify service health.

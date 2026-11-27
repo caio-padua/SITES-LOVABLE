@@ -1,5 +1,6 @@
 import { createFileRoute, useRouterState } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
+import { summarizeHealth } from "@/lib/service-health";
 
 export const Route = createFileRoute("/status")({
   head: () => ({
@@ -18,7 +19,10 @@ export const Route = createFileRoute("/status")({
 
 function StatusPage() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const timestamp = new Date().toLocaleString("pt-BR");
+  const [timestamp, setTimestamp] = useState<string | null>(null);
+  useEffect(() => {
+    setTimestamp(new Date().toLocaleString("pt-BR"));
+  }, []);
 
   type CheckResult = {
     name: string;
@@ -33,8 +37,17 @@ function StatusPage() {
   const [intervalSec, setIntervalSec] = useState(30);
   const [, setTick] = useState(0);
   const runningRef = useRef(false);
+  const health = summarizeHealth(checks, running);
+  const healthCopy = {
+    unchecked: { title: "Status dos serviços", detail: "Execute o auto-teste para verificar os serviços deste dispositivo.", label: "Não verificado" },
+    checking: { title: "Verificando serviços", detail: "As verificações estão em andamento.", label: "Verificando" },
+    healthy: { title: "Verificações concluídas", detail: "As verificações executadas tiveram sucesso; isso não valida login nem envio de formulários.", label: "Verificado" },
+    degraded: { title: "Verificações com falhas", detail: "Uma ou mais verificações falharam. Consulte os resultados abaixo.", label: "Falhas detectadas" },
+  }[health];
 
   async function runSelfTest() {
+    if (runningRef.current) return;
+    runningRef.current = true;
     setRunning(true);
     setChecks(null);
     const results: CheckResult[] = [];
@@ -220,16 +233,16 @@ function StatusPage() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-500" />
           </span>
-          <h1 className="text-2xl font-serif text-foreground">Site de vendas ativo</h1>
+          <h1 className="text-2xl font-serif text-foreground">{healthCopy.title}</h1>
         </div>
         <p className="mt-3 text-sm text-muted-foreground">
-          Todos os serviços operando normalmente.
+          {healthCopy.detail}
         </p>
 
         <dl className="mt-8 space-y-3 text-sm">
           <div className="flex justify-between border-b border-border/40 pb-2">
             <dt className="text-muted-foreground">Status</dt>
-            <dd className="font-medium text-emerald-500">Online</dd>
+            <dd className="font-medium text-emerald-500">{healthCopy.label}</dd>
           </div>
           <div className="flex justify-between border-b border-border/40 pb-2">
             <dt className="text-muted-foreground">Rota carregada</dt>
@@ -241,7 +254,7 @@ function StatusPage() {
           </div>
           <div className="flex justify-between">
             <dt className="text-muted-foreground">Verificado em</dt>
-            <dd className="font-mono text-foreground">{timestamp}</dd>
+            <dd className="font-mono text-foreground">{timestamp ?? "—"}</dd>
           </div>
         </dl>
 

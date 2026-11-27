@@ -138,7 +138,7 @@ function Nav() {
   );
 }
 
-/** Acessos B2B (médico/clínica) e B2C (paciente) → /login e /area. */
+/** Explicit Manager origins keep preview navigation outside the local legacy login. */
 function AccessLinks({ large = false }: { large?: boolean }) {
   const { lang } = useLang();
   const c = content.nav;
@@ -147,7 +147,7 @@ function AccessLinks({ large = false }: { large?: boolean }) {
     (large ? "" : "parxis-btn-sm !px-2 sm:!px-4 !tracking-[0.08em] sm:!tracking-[0.2em]");
   return (
     <>
-      <a href="/login" className={cls}>
+      <a href="https://paxmed.com.br/login" className={cls}>
         <span className="parxis-btn-inner whitespace-nowrap">
           {large ? (
             tr(c.doctor, lang)
@@ -159,7 +159,7 @@ function AccessLinks({ large = false }: { large?: boolean }) {
           )}
         </span>
       </a>
-      <a href="/area" className={cls}>
+      <a href="https://paxmed.com.br/area" className={cls}>
         <span className="parxis-btn-inner whitespace-nowrap">{tr(c.patient, lang)}</span>
       </a>
     </>
