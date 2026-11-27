@@ -259,9 +259,9 @@
     {
       "commit": "2438aed",
       "date": "2026-07-26",
-      "title": "Corrigiu bloco do PADAXOR",
+      "title": "Corrigiu bloco do PAXMED",
       "messages": [
-        "Corrigiu bloco do PADAXOR",
+        "Corrigiu bloco do PAXMED",
         "Changes"
       ],
       "files": [
@@ -314,7 +314,7 @@
       "files": [
         {
           "status": "A",
-          "path": "src/assets/padaxor-logo.png.asset.json"
+          "path": "src/assets/paxmed-logo.png.asset.json"
         },
         {
           "status": "M",

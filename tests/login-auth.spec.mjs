@@ -28,8 +28,8 @@ const LOGIN_URL = `${BASE_URL}/login`;
 const API_ROUTE_RE =
   /workspaceapi-server-production-[^/]+\.up\.railway\.app\/api\/collaborator\//;
 
-const TOKEN_KEY = "padaxor.auth.token";
-const PROFILE_KEY = "padaxor.auth.professional";
+const TOKEN_KEY = "paxmed.auth.token";
+const PROFILE_KEY = "paxmed.auth.professional";
 
 const results = [];
 function record(name, ok, detail = "") {

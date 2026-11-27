@@ -358,7 +358,7 @@ export const content = {
         en: "I have read and agree to the use of the data above for eligibility review, contact regarding my candidacy and, if approved, activation of the PAXMED license, in accordance with LGPD. My data is treated in confidence, is not commercialised and may be requested for deletion at any time via ",
         pt: "Li e concordo com o uso dos dados acima para análise de elegibilidade, contato sobre minha candidatura e, se aprovado, ativação da licença PAXMED, conforme a LGPD. Seus dados são tratados em sigilo, não são comercializados e podem ser solicitados para exclusão a qualquer momento pelo email ",
       },
-      email: { en: "contact@parxis.com.br", pt: "contato@parxis.com.br" },
+      email: { en: "contact@paxmed.com.br", pt: "contato@paxmed.com.br" },
     },
     toasts: {
       nameShort: { en: "Please provide your full name.", pt: "Informe seu nome completo." },
@@ -453,8 +453,8 @@ export const content = {
       en: "A PAXMED product — a PADCOM company. Granted by referral, kept by standard.",
       pt: "Um produto PAXMED — uma empresa PADCOM. Exclusividade e alta precisão para a medicina integrativa.",
     },
-    domain: { en: "padaxor.com.br", pt: "padaxor.com.br" },
-    email: { en: "contact@padaxor.com.br", pt: "contato@padaxor.com.br" },
+    domain: { en: "paxmed.com.br", pt: "paxmed.com.br" },
+    email: { en: "contact@paxmed.com.br", pt: "contato@paxmed.com.br" },
     established: { en: "Établi 2026", pt: "Établi 2026" },
     place: { en: "São Paulo · Brazil", pt: "São Paulo · Brasil" },
     rights: { en: "© 2026 PAXMED · All rights reserved", pt: "© 2026 PAXMED · Todos os direitos reservados" },
@@ -472,8 +472,8 @@ export const content = {
       contact: {
         title: { en: "Private Office", pt: "Escritório Privado" },
         lines: [
-          { en: "padaxor.com.br", pt: "padaxor.com.br" },
-          { en: "contact@padaxor.com.br", pt: "contato@padaxor.com.br" },
+          { en: "paxmed.com.br", pt: "paxmed.com.br" },
+          { en: "contact@paxmed.com.br", pt: "contato@paxmed.com.br" },
           { en: "Av. Brigadeiro Faria Lima, 3477", pt: "Av. Brigadeiro Faria Lima, 3477" },
           { en: "Itaim Bibi · São Paulo · SP", pt: "Itaim Bibi · São Paulo · SP" },
         ],

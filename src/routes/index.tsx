@@ -7,7 +7,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import parxisSymbolAsset from "@/assets/paxmed-symbol-hero-champagne.png.asset.json";
 import parxisWordmarkAsset from "@/assets/parxis-wordmark.png.asset.json";
 import padconLogoAsset from "@/assets/padcon-logo-cropped.png.asset.json";
-import padaxorLogoAsset from "@/assets/padaxor-logo.png.asset.json";
+import paxmedSymbolFooterAsset from "@/assets/paxmed-symbol-champagne.png.asset.json";
 import atelierWideAsset from "@/assets/parxis-atelier-wide-padcon.png.asset.json";
 import ampoulesWideAsset from "@/assets/parxis-ampoules-wide-padcon.png.asset.json";
 const ampoulesAtelierUrl = atelierWideAsset.url;
@@ -138,7 +138,7 @@ function Nav() {
   );
 }
 
-/** Acessos B2B (médico/clínica) e B2C (paciente) → site oficial. */
+/** Acessos B2B (médico/clínica) e B2C (paciente) → /login e /area. */
 function AccessLinks({ large = false }: { large?: boolean }) {
   const { lang } = useLang();
   const c = content.nav;
@@ -147,7 +147,7 @@ function AccessLinks({ large = false }: { large?: boolean }) {
     (large ? "" : "parxis-btn-sm !px-2 sm:!px-4 !tracking-[0.08em] sm:!tracking-[0.2em]");
   return (
     <>
-      <a href="https://paxmed.com.br" className={cls}>
+      <a href="/login" className={cls}>
         <span className="parxis-btn-inner whitespace-nowrap">
           {large ? (
             tr(c.doctor, lang)
@@ -159,7 +159,7 @@ function AccessLinks({ large = false }: { large?: boolean }) {
           )}
         </span>
       </a>
-      <a href="https://paxmed.com.br" className={cls}>
+      <a href="/area" className={cls}>
         <span className="parxis-btn-inner whitespace-nowrap">{tr(c.patient, lang)}</span>
       </a>
     </>
@@ -910,7 +910,7 @@ function CTA() {
       fetch(`${API_BASE}/api/vitrine-contatos`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, source: "padaxor-homepage" }),
+        body: JSON.stringify({ ...payload, source: "paxmed-homepage" }),
       }),
     ]);
     setLoading(false);
@@ -1140,7 +1140,7 @@ function Footer() {
           <div className="flex items-center justify-center md:justify-start gap-5 md:gap-8 h-[110px] sm:h-[128px] md:h-[144px]">
             <div className="h-[92px] sm:h-[108px] md:h-[124px] flex items-center justify-center shrink-0">
               <img
-                src={padaxorLogoAsset.url}
+                src={paxmedSymbolFooterAsset.url}
                 alt="PAXMED"
                 className="h-full w-auto shrink-0 select-none object-contain"
                 draggable={false}

@@ -1,9 +1,9 @@
 openapi: 3.0.3
 info:
-  title: Padaxor api-server (contract)
+  title: Paxmed api-server (contract)
   version: 0.1.0
   description: |
-    Contrato mínimo entre o frontend Padaxor (padaxor.lovable.app) e o
+    Contrato mínimo entre o frontend Paxmed (paxmed.lovable.app) e o
     api-server (Railway). Fonte da verdade permanece no repositório do
     api-server; este arquivo é o snapshot que o frontend consome. Divergências
     devem ser reconciliadas antes de publicar mudanças no frontend.

@@ -5,7 +5,7 @@
 // por username (case-insensitive), com janela deslizante.
 // ------------------------------------------------------------------
 
-const STORAGE_KEY = "padaxor.login.lockout";
+const STORAGE_KEY = "paxmed.login.lockout";
 const WINDOW_MS = 5 * 60_000;      // janela de contagem
 const MAX_ATTEMPTS = 5;             // após isto, bloqueia
 const LOCKOUT_MS = 15 * 60_000;     // 15 minutos

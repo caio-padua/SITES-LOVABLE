@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 // Feature flags — sinal simples para ligar/desligar comportamentos
 // sem redeploy. Ordem de precedência:
-//   1. localStorage "padaxor.flags" (JSON parcial) — override manual.
+//   1. localStorage "paxmed.flags" (JSON parcial) — override manual.
 //   2. window.__PAXMED_FLAGS__ (injeção via <script> no HTML) — permite
 //      operação forçar um estado sem tocar no código.
 //   3. Defaults abaixo.
@@ -26,7 +26,7 @@ export const DEFAULT_FLAGS: FeatureFlags = {
   requestIdInToast: true,
 };
 
-const STORAGE_KEY = "padaxor.flags";
+const STORAGE_KEY = "paxmed.flags";
 
 declare global {
   interface Window {

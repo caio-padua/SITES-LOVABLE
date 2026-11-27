@@ -86,7 +86,7 @@ async function testForgotValidEmail(context) {
     return route.fulfill({ status: 200, contentType: "application/json", body: "{}" });
   });
 
-  await page.locator("form input").nth(0).fill("dra.padua@parxis.com.br");
+  await page.locator("form input").nth(0).fill("dra.padua@paxmed.com.br");
   await page
     .locator('button:has-text("Esqueci minha senha"), button:has-text("I forgot my password")')
     .first()
@@ -101,7 +101,7 @@ async function testForgotValidEmail(context) {
   record("forgot válido: chamou supabase.auth.resetPasswordForEmail", recoverCalled);
   record(
     "forgot válido: enviou o email digitado",
-    !!recoverBody && recoverBody.email === "dra.padua@parxis.com.br",
+    !!recoverBody && recoverBody.email === "dra.padua@paxmed.com.br",
     JSON.stringify(recoverBody),
   );
   record(

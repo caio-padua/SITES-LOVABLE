@@ -5,8 +5,8 @@
 // redirecionando para /login?expired=1 quando o token expira.
 // ------------------------------------------------------------------
 
-export const TOKEN_STORAGE_KEY = "padaxor.auth.token";
-export const PROFILE_STORAGE_KEY = "padaxor.auth.professional";
+export const TOKEN_STORAGE_KEY = "paxmed.auth.token";
+export const PROFILE_STORAGE_KEY = "paxmed.auth.professional";
 
 // ------------------------------------------------------------------
 // Correlation-ID — cada chamada ao api-server carrega um X-Request-Id.
@@ -127,7 +127,7 @@ export function logout(reason: LogoutReason = "manual") {
     const url = new URL(window.location.href);
     url.searchParams.set(reason === "manual" ? "logout" : "expired", "1");
     window.history.replaceState({}, "", url.toString());
-    window.dispatchEvent(new CustomEvent("padaxor:session-cleared", { detail: { reason } }));
+    window.dispatchEvent(new CustomEvent("paxmed:session-cleared", { detail: { reason } }));
     return;
   }
   window.location.assign(target);

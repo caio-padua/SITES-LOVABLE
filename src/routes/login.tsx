@@ -62,7 +62,7 @@ function normalizeRole(role: string | undefined | null): string {
 /**
  * Mapeia o `role` livre do banco para uma rota dentro do app clínico.
  * Se aparecerem novos papéis, cair no destino padrão `/` — nunca quebrar.
- * Ajuste os paths abaixo conforme as rotas reais do app.parxis.com.br.
+ * Ajuste os paths abaixo conforme as rotas reais do app.paxmed (domínio antigo).
  */
 function roleToPath(role: string): string {
   const r = normalizeRole(role);
@@ -93,7 +93,7 @@ async function apiLogin(
 ): Promise<{ token: string; professional: Professional; requestId: string }> {
   const requestId = newRequestId();
   console.info(
-    `[padaxor][auth] POST /api/collaborator/login → dispatch requestId=${requestId}`,
+    `[paxmed][auth] POST /api/collaborator/login → dispatch requestId=${requestId}`,
   );
   const res = await fetch(`${API_URL}/api/collaborator/login`, {
     method: "POST",
@@ -125,18 +125,18 @@ async function apiLogin(
     err.status = res.status;
     err.requestId = serverRequestId;
     console.warn(
-      `[padaxor][auth] login failed status=${res.status} requestId=${serverRequestId} message="${message}"`,
+      `[paxmed][auth] login failed status=${res.status} requestId=${serverRequestId} message="${message}"`,
     );
     throw err;
   }
   if (!payload?.token || !payload?.professional) {
     console.error(
-      `[padaxor][auth] unexpected payload requestId=${serverRequestId}`,
+      `[paxmed][auth] unexpected payload requestId=${serverRequestId}`,
     );
     throw new Error("Resposta inesperada do servidor de autenticação.");
   }
   console.info(
-    `[padaxor][auth] login ok status=${res.status} requestId=${serverRequestId}`,
+    `[paxmed][auth] login ok status=${res.status} requestId=${serverRequestId}`,
   );
   return {
     token: payload.token,
@@ -326,7 +326,7 @@ const CERTS_COPY = {
   close: { pt: "Fechar", en: "Close" },
 } as const;
 
-// const APP_URL = "https://app.parxis.com.br"; // domínio nunca existiu — não foi comprado
+// const APP_URL = "https://app.paxmed (domínio antigo)"; // domínio nunca existiu — não foi comprado
 // URL definitiva do serviço @workspace/padcom no Railway (no ar desde 27/07).
 const APP_URL = "https://workspacepadcom-production.up.railway.app";
 
@@ -495,7 +495,7 @@ function LoginPage() {
           { duration: 10000 },
         );
         console.warn(
-          `[padaxor][auth] lockout active username="${email.trim().toLowerCase()}" remainingMs=${state.remainingMs}`,
+          `[paxmed][auth] lockout active username="${email.trim().toLowerCase()}" remainingMs=${state.remainingMs}`,
         );
         return;
       }

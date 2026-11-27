@@ -47,7 +47,7 @@ export function ApiHealthBanner({ lang = "pt" as "pt" | "en" }: { lang?: "pt" | 
         if (res.ok) {
           if (failureCountRef.current > 0 || status !== "ok") {
             console.info(
-              `[padaxor][health] ok status=${res.status} requestId=${serverRequestId} duration=${durationMs}ms`,
+              `[paxmed][health] ok status=${res.status} requestId=${serverRequestId} duration=${durationMs}ms`,
             );
           }
           failureCountRef.current = 0;
@@ -55,14 +55,14 @@ export function ApiHealthBanner({ lang = "pt" as "pt" | "en" }: { lang?: "pt" | 
         } else if (res.status >= 500) {
           failureCountRef.current += 1;
           console.warn(
-            `[padaxor][health] 5xx status=${res.status} requestId=${serverRequestId} duration=${durationMs}ms failures=${failureCountRef.current}`,
+            `[paxmed][health] 5xx status=${res.status} requestId=${serverRequestId} duration=${durationMs}ms failures=${failureCountRef.current}`,
           );
           if (failureCountRef.current >= FAILURE_THRESHOLD) setStatus("degraded");
         } else {
           // 4xx (inclusive 404 se endpoint ainda não existir): não é degradação
           // do servidor, é ausência de contrato. Fica "unknown" — sem banner.
           console.info(
-            `[padaxor][health] 4xx status=${res.status} requestId=${serverRequestId} duration=${durationMs}ms (sem contrato — banner suprimido)`,
+            `[paxmed][health] 4xx status=${res.status} requestId=${serverRequestId} duration=${durationMs}ms (sem contrato — banner suprimido)`,
           );
           failureCountRef.current = 0;
           setStatus("unknown");
@@ -74,7 +74,7 @@ export function ApiHealthBanner({ lang = "pt" as "pt" | "en" }: { lang?: "pt" | 
         const durationMs = Math.round(performance.now() - startedAt);
         const reason = (err as Error)?.name === "AbortError" ? "timeout" : "network";
         console.warn(
-          `[padaxor][health] ${reason} requestId=${requestId} duration=${durationMs}ms failures=${failureCountRef.current}`,
+          `[paxmed][health] ${reason} requestId=${requestId} duration=${durationMs}ms failures=${failureCountRef.current}`,
         );
         if (failureCountRef.current >= FAILURE_THRESHOLD) setStatus("degraded");
       }

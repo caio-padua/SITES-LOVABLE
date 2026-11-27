@@ -81,7 +81,7 @@ export function VitrineGate({ tipo, children }: VitrineGateProps) {
       nome: nomeClean,
       cpf: formatCpf(cpf).replace(/\D/g, ""),
       telefone: formatPhone(telefone).replace(/\D/g, ""),
-      source: "padaxor-vitrine",
+      source: "paxmed-vitrine",
     };
     if (tipo === "clinica") {
       payload.cnpj = formatCnpj(cnpj).replace(/\D/g, "");
